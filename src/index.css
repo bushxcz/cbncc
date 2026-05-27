@@ -69,6 +69,19 @@
   --spacing-grid-columns: 12;
 }
 
+.dark {
+  --color-background: #09090b;
+  --color-on-background: #fafafa;
+  --color-surface: #18181b;
+  --color-surface-bright: #27272a;
+  --color-surface-container: #18181b;
+  --color-primary: #ffffff;
+  --color-on-primary: #09090b;
+  --color-secondary: #a1a1aa;
+  --color-outline: #52525b;
+  --color-outline-variant: #3f3f46;
+}
+
 /* Custom Base / Utility Styles */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
