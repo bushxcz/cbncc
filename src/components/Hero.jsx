@@ -4,7 +4,7 @@ export default function Hero() {
       <div className="relative flex items-center justify-center w-full h-full max-w-5xl px-4">
         
         <h1 
-          className="relative z-10 text-[27vw] md:text-[25vw] lg:text-[25vw] font-medium font-black tracking-tighter text-black uppercase text-center leading-none select-none -translate-y-10 "
+          className="relative z-10 text-[27vw] md:text-[25vw] lg:text-[21vw] font-medium font-black tracking-tighter text-black uppercase text-center leading-none select-none -translate-y-10 "
           style={{ fontFamily: " 'Sora','Montserrat', 'Sora', sans-serif" }}
         >
         CBNCC
@@ -12,16 +12,16 @@ export default function Hero() {
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
           <img
             alt="CBNCC Chrome Robot Profile"
-            className="w-[190px] h-[260px] xs:w-[240px] xs:h-[340px] sm:w-[280px] sm:h-[380px] md:w-[380px] md:h-[500px]  object-contain select-none translate-y-10 sm:translate-y-12 md:translate-y-20"
-            src="public/robot.png"
+            className="w-[190px] h-[270px] xs:w-[240px] xs:h-[340px] sm:w-[280px] sm:h-[380px] md:w-[410px] md:h-[530px]  object-contain select-none translate-y-10 sm:translate-y-12 md:translate-y-20"
+            src="/robot.png"
             style={{
               mixBlendMode: 'multiply',
           WebkitMaskImage: `
   linear-gradient(to bottom, black 0%, black 70%, transparent 100%),
-  linear-gradient(to right, black 0%, black 75%, transparent 100%)
+  linear-gradient(to right, black 0%, black 60%, transparent 100%)
 `,
 maskImage: `
-  linear-gradient(to bottom, black 0%, black 70%, transparent 100%),
+  linear-gradient(to bottom, black 0%, black 75%, transparent 100%),
   linear-gradient(to right, black 0%, black 75%, transparent 100%)
 `,
 WebkitMaskComposite: 'destination-in',
@@ -95,6 +95,7 @@ maskComposite: 'intersect',
       border-solid border-black
       border-2
       border-radius-2xl
+      hover:scale-105 hover:bg-black hover:text-white cursor-pointer
     "
   >
     Join CBNCC
@@ -122,6 +123,7 @@ maskComposite: 'intersect',
       dark:hover:text-black
       cursor-pointer
       shadow-lg
+      hover:border-solid hover:border-black hover:border-2
     "
   >
     Learn More
