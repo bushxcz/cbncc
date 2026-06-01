@@ -56,7 +56,7 @@ export default function Hero() {
     "
     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
   >
-  Code Busters & Coding Club brings together coders, innovators, and problem-solvers at Netaji Subhas University.
+  Code Busters & Coding Club is the official Tech club of NETAJI SUBHAS UNIVERSITY which brings together coders, innovators, and problem-solvers.
 </p>
 <div className=" z-30 flex gap-4">
   
