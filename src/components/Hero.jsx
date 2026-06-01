@@ -11,23 +11,19 @@ export default function Hero() {
         </h1>
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
           <img
-            alt="CBNCC Chrome Robot Profile"
-            className="w-[190px] h-[270px] xs:w-[240px] xs:h-[340px] sm:w-[280px] sm:h-[380px] md:w-[410px] md:h-[530px]  object-contain select-none translate-y-10 sm:translate-y-12 md:translate-y-20"
-            src="/robot.png"
-            style={{
-              mixBlendMode: 'multiply',
-          WebkitMaskImage: `
-  linear-gradient(to bottom, black 0%, black 70%, transparent 100%),
-  linear-gradient(to right, black 0%, black 60%, transparent 100%)
-`,
-maskImage: `
-  linear-gradient(to bottom, black 0%, black 75%, transparent 100%),
-  linear-gradient(to right, black 0%, black 75%, transparent 100%)
-`,
-WebkitMaskComposite: 'destination-in',
-maskComposite: 'intersect',
-            }}
-          />
+  alt="CBNCC Chrome Robot Profile"
+  className="
+  h-[60vh]
+    sm:h-[60vh]
+    md:h-[75vh]
+    lg:h-[100vh]
+    w-auto
+    object-contain
+    select-none
+    translate-y-10 sm:translate-y-12 md:translate-y-20
+  "
+  src="/robo.png"
+/>
         </div>
       </div>
 

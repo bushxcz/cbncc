@@ -71,7 +71,7 @@ export default function Navigation() {
 
             {/* Join Us Button - hidden on mobile (below md breakpoint) */}
             <button className="hidden md:flex px-6 py-2.5 border border-on-background rounded-full font-body-md text-[13px] font-semibold text-on-background hover:bg-on-background hover:text-background transition-all duration-300 items-center gap-2 group cursor-pointer shadow-sm">
-              JOIN US
+            CONTACT US
               <span className="material-symbols-outlined text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" data-icon="north_east">
                 north_east
               </span>
