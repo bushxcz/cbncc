@@ -43,8 +43,8 @@ maskComposite: 'intersect',
       <div
   className="
     absolute
-    bottom-24 sm:bottom-20
-    left-4 md:left-10
+    bottom-48 sm:bottom-15
+    left-4 md:left-20
     z-30
     max-w-md
     hidden sm:block
@@ -55,27 +55,14 @@ maskComposite: 'intersect',
       text-sm md:text-base
       text-black/80 dark:text-black
       font-bold
-      leading-relaxed 
+      leading-relaxed
+      mb-5
     "
     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
   >
-    Code Busters & Coding Club is the official coding and innovation club of
-    Netaji Subhas University, bringing together students passionate about
-    technology, problem-solving, and building meaningful solutions.
-  </p>
-</div>
-      
-      <div className="absolute right-6 md:right-20 top-[80%] -translate-x-1/2 rotate-360 origin-center z-30 select-none hidden sm:block">
-        <p 
-          className="text-[10px] tracking-[0.25em] text-white/60 dark:text-black/60 font-semibold uppercase whitespace-nowrap"
-          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-        >
-          scroll to explore---&gt;
-        </p>
-      </div>
-
-      {/* Bottom Right Buttons */}
-<div className="absolute bottom-10 right-4 md:right-10 z-30 flex gap-4">
+  Code Busters & Coding Club brings together coders, innovators, and problem-solvers at Netaji Subhas University.
+</p>
+<div className=" z-30 flex gap-4">
   
   <button
     className="
@@ -130,6 +117,17 @@ maskComposite: 'intersect',
   </button>
 
 </div>
+
+</div>
+      
+      <div className="absolute right-6 md:right-20 top-[80%] -translate-x-1/2 rotate-360 origin-center z-30 select-none hidden sm:block">
+        <p 
+          className="text-[10px] tracking-[0.25em] text-white/60 dark:text-black/60 font-semibold uppercase whitespace-nowrap"
+          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+        >
+          scroll to explore---&gt;
+        </p>
+      </div>
     </main>
   );
 }
