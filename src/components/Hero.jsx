@@ -1,4 +1,25 @@
+import { useState, useEffect } from "react";
+
 export default function Hero() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    // Initial sync
+    setIsDark(document.documentElement.classList.contains("dark"));
+
+    // MutationObserver to listen for class changes on <html>
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="relative min-h-screen w-full bg-background select-none transition-colors duration-300">
       
@@ -13,17 +34,12 @@ export default function Hero() {
           {/* 2. Soft Inner Glow Circle */}
           <div className="absolute w-[100%] aspect-square rounded-full bg-white/75 dark:bg-white/[0.04] blur-md z-0 pointer-events-none" />
 
-          
-
           {/* Robot Image */}
           <img
             alt="CBNCC Chrome Robot Profile"
             className="w-full h-auto object-contain z-10 select-none relative drop-shadow-[0_12px_24px_rgba(0,0,0,0.12)] dark:drop-shadow-[0_16px_32px_rgba(0,0,0,0.5)]"
             src="/robo.png"
           />
-
-          {/* Bottom fade mask to blend robot into the background */}
-          
         </div>
 
         {/* Title Heading */}
@@ -107,12 +123,15 @@ export default function Hero() {
       </div>
 
       {/* Desktop Layout (>= md breakpoint) */}
-      <div className="hidden md:flex relative min-h-screen w-full items-center justify-center select-none overflow-hidden">
+      <div className="hidden md:flex relative min-h-screen w-full items-center justify-center select-none overflow-hidden bg-background">
         <div className="relative flex items-center justify-center w-full h-full max-w-5xl px-4">
           
-          <h1 
-            className="relative z-10 text-[27vw] md:text-[25vw] lg:text-[21vw] font-medium font-black tracking-tighter text-black uppercase text-center leading-none select-none -translate-y-10"
-            style={{ fontFamily: "'Sora', 'Montserrat', sans-serif" }}
+          <h1
+            style={{
+              color: isDark ? "rgba(255, 255, 255, 0.54)" : "rgba(2, 2, 2, 0.94)",
+              fontFamily: "'Sora', 'Montserrat', sans-serif",
+            }}
+            className="relative z-10 text-[27vw] md:text-[25vw] lg:text-[21vw] font-medium font-black tracking-tighter uppercase text-center leading-none select-none -translate-y-10"
           >
             CBNCC
           </h1>
@@ -128,6 +147,7 @@ export default function Hero() {
                 object-contain
                 select-none
                 translate-y-10 sm:translate-y-12 md:translate-y-20
+                drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_20px_40px_rgba(255,255,255,0.08)]
               "
               src="/robo.png"
             />
@@ -136,8 +156,11 @@ export default function Hero() {
 
         <div className="absolute left-6 md:left-12 top-[35%] -translate-x-1/2 -rotate-90 origin-center z-30 select-none hidden sm:block">
           <p 
-            className="text-[10px] tracking-[0.25em] text-black/60 dark:text-black/60 font-semibold uppercase whitespace-nowrap"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            className="text-[10px] tracking-[0.25em] font-semibold uppercase whitespace-nowrap"
+            style={{ 
+              fontFamily: "'Space Grotesk', sans-serif",
+              color: isDark ? "rgba(255, 255, 255, 0.75)" : "rgba(0, 0, 0, 0.75)"
+            }}
           >
             BUILD &gt; BREAK &gt; LEARN &gt; REPEAT
           </p>
@@ -145,69 +168,68 @@ export default function Hero() {
 
         <div className="absolute bottom-48 sm:bottom-15 left-4 md:left-20 z-30 max-w-md hidden sm:block">
           <p
-            className="text-sm md:text-base text-black/80 dark:text-black font-bold leading-relaxed mb-5"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            className="text-sm md:text-base font-bold leading-relaxed mb-5"
+            style={{ 
+              fontFamily: "'Space Grotesk', sans-serif",
+              color: isDark ? "rgba(255, 255, 255, 0.9)" : "rgba(0, 0, 0, 0.88)"
+            }}
           >
-            Code Busters & Coding Club is the official Tech club of NETAJI SUBHAS UNIVERSITY which brings together coders, innovators, and problem-solvers.
+            Code Busters & Coding Club is the official Tech club of <strong className="font-extrabold" style={{ color: isDark ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)" }}>NETAJI SUBHAS UNIVERSITY</strong> which brings together coders, innovators, and problem-solvers.
           </p>
-          <div className="z-30 flex gap-4">
+          <div className="z-30 flex flex-row gap-4 mt-6 justify-center pr-15">
             <button
               className="
-                px-6 py-3
+                flex items-center justify-between gap-4
+                min-w-[220px]
+                px-7 py-4
+                bg-black text-white
+                dark:bg-white dark:text-black
                 rounded-2xl
-                bg-black
-                text-white
-                dark:bg-white
-                dark:text-black
                 font-semibold
-                text-sm md:text-base
-                transition-all duration-300
-                hover:scale-105
-                hover:opacity-90
-                cursor-pointer
+                text-[15px]
                 shadow-lg
-                border-solid border-black
-                border-2
-                hover:bg-black hover:text-white
+                transition-all duration-300
+                hover:scale-[1.03]
+                hover:shadow-xl
+                cursor-pointer
               "
             >
-              Join CBNCC
+              <span>Join CBNCC</span>
+              <span className="material-symbols-outlined text-lg">east</span>
             </button>
-
             <button
               className="
-                px-6 py-3
-                rounded-2xl
-                border
-                border-black
-                dark:border-white
-                bg-white/80
-                dark:bg-black/80
-                text-black
-                dark:text-white
-                font-semibold
-                text-sm md:text-base
+                flex items-center justify-between gap-4
+                min-w-[220px]
+                px-7 py-4
+                bg-white/90 dark:bg-black/40
+                border border-black/30 dark:border-white/20
                 backdrop-blur-md
+                text-black dark:text-white
+                rounded-2xl
+                font-semibold
+                text-[15px]
+                shadow-sm
                 transition-all duration-300
-                hover:scale-105
-                hover:bg-black
-                hover:text-white
-                dark:hover:bg-white
-                dark:hover:text-black
+                hover:bg-black hover:text-white
+                dark:hover:bg-white dark:hover:text-black
+                hover:scale-[1.03]
                 cursor-pointer
-                shadow-lg
-                hover:border-solid hover:border-black hover:border-2
               "
             >
-              Learn More
+              <span>Learn More</span>
+              <span className="material-symbols-outlined text-lg">east</span>
             </button>
           </div>
         </div>
 
         <div className="absolute right-6 md:right-20 top-[80%] -translate-x-1/2 rotate-360 origin-center z-30 select-none hidden sm:block">
           <p 
-            className="text-[10px] tracking-[0.25em] text-white/60 dark:text-black/60 font-semibold uppercase whitespace-nowrap"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            className="text-[10px] tracking-[0.25em] font-semibold uppercase whitespace-nowrap"
+            style={{ 
+              fontFamily: "'Space Grotesk', sans-serif",
+              color: isDark ? "rgba(255, 255, 255, 0.75)" : "rgba(0, 0, 0, 0.75)"
+            }}
           >
             scroll to explore---&gt;
           </p>

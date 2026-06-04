@@ -109,7 +109,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center mb-10">
           <div className="flex items-center gap-3 select-none">
             
-            <span className="font-display-xl text-body-lg font-extrabold tracking-tighter text-on-background">
+            <span className="font-display-xl text-body-lg font-extrabold tracking-tighter text-on-background dark:text-white">
               CBNCC
             </span>
           </div>
