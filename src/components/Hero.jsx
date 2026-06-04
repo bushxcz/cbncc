@@ -3,43 +3,46 @@ export default function Hero() {
     <main className="relative min-h-screen w-full bg-background select-none transition-colors duration-300">
       
       {/* Mobile & Tablet Layout (< md breakpoint) */}
-      <div className="flex md:hidden flex-col items-center w-full min-h-screen px-6 pt-16 pb-12 select-none relative z-20">
+      <div className="flex md:hidden flex-col items-center w-full min-h-screen px-6 pt-14 pb-10 select-none relative z-20 justify-center">
         
         {/* Robot Image & Glowing Halo */}
-        <div className="relative w-[82vw] sm:w-[75vw] max-w-[350px] aspect-square flex items-center justify-center mb-3 animate-fade-up">
+        <div className="relative w-[70vw] max-w-[310px] flex items-center justify-center mb-1.5 mt-2 animate-fade-up">
           {/* 1. Large Soft Outer Glow (Radial White Glow) */}
-          <div className="absolute w-[118%] h-[118%] rounded-full bg-white dark:bg-white/10 blur-2xl opacity-95 dark:opacity-40 z-0 pointer-events-none" />
+          <div className="absolute w-[118%] aspect-square rounded-full bg-white dark:bg-white/10 blur-2xl opacity-95 dark:opacity-40 z-0 pointer-events-none" />
 
           {/* 2. Soft Inner Glow Circle */}
-          <div className="absolute w-[100%] h-[100%] rounded-full bg-white/75 dark:bg-white/[0.04] blur-md z-0 pointer-events-none" />
+          <div className="absolute w-[100%] aspect-square rounded-full bg-white/75 dark:bg-white/[0.04] blur-md z-0 pointer-events-none" />
 
           {/* 3. Primary Glowing Outer Ring */}
-          <div className="absolute w-[94%] h-[94%] rounded-full border border-white dark:border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.95),inset_0_0_20px_rgba(255,255,255,0.85)] dark:shadow-[0_0_25px_rgba(255,255,255,0.15)] z-0 pointer-events-none blur-[0.5px]" />
+          <div className="absolute w-[94%] aspect-square rounded-full border border-white dark:border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.95),inset_0_0_20px_rgba(255,255,255,0.85)] dark:shadow-[0_0_25px_rgba(255,255,255,0.15)] z-0 pointer-events-none blur-[0.5px]" />
 
           {/* 4. Defining Thin Ring (Light gray in light theme, white in dark theme) */}
-          <div className="absolute w-[94%] h-[94%] rounded-full border border-black/10 dark:border-white/15 z-0 pointer-events-none" />
+          <div className="absolute w-[94%] aspect-square rounded-full border border-black/10 dark:border-white/15 z-0 pointer-events-none" />
 
           {/* 5. Inner Accent Ring */}
-          <div className="absolute w-[82%] h-[82%] rounded-full border border-black/5 dark:border-white/10 opacity-80 z-0 pointer-events-none" />
+          <div className="absolute w-[82%] aspect-square rounded-full border border-black/5 dark:border-white/10 opacity-80 z-0 pointer-events-none" />
 
           {/* Robot Image */}
           <img
             alt="CBNCC Chrome Robot Profile"
-            className="h-full w-auto object-contain z-10 select-none relative drop-shadow-[0_12px_24px_rgba(0,0,0,0.12)] dark:drop-shadow-[0_16px_32px_rgba(0,0,0,0.5)]"
+            className="w-full h-auto object-contain z-10 select-none relative drop-shadow-[0_12px_24px_rgba(0,0,0,0.12)] dark:drop-shadow-[0_16px_32px_rgba(0,0,0,0.5)]"
             src="/robo.png"
           />
+
+          {/* Bottom fade mask to blend robot into the background */}
+          <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-background via-background/80 to-transparent z-20 pointer-events-none" />
         </div>
 
         {/* Title Heading */}
         <h1 
-          className="text-[clamp(3.2rem,14vw,5rem)] font-black text-on-background uppercase text-center leading-none tracking-tighter mt-1 animate-fade-up delay-100"
+          className="text-[clamp(3.8rem,15vw,5.5rem)] font-black text-on-background uppercase text-center leading-none tracking-[-0.065em] mt-[5px] relative z-20 animate-fade-up delay-100"
           style={{ fontFamily: "'Sora', 'Montserrat', sans-serif" }}
         >
           CBNCC
         </h1>
 
         {/* Separator: Line with center dot */}
-        <div className="flex items-center gap-4 w-28 my-4 opacity-60 animate-fade-up delay-200">
+        <div className="flex items-center gap-4 w-28 my-3 opacity-60 animate-fade-up delay-200">
           <div className="h-[1px] flex-1 bg-on-background/25"></div>
           <div className="w-1.5 h-1.5 rounded-full bg-on-background/70"></div>
           <div className="h-[1px] flex-1 bg-on-background/25"></div>
@@ -47,14 +50,14 @@ export default function Hero() {
 
         {/* Description */}
         <p
-          className="text-center text-[13px] sm:text-[14px] leading-relaxed text-on-background/80 dark:text-on-background/90 max-w-[85%] sm:max-w-md mx-auto mb-8 font-body-md animate-fade-up delay-300"
+          className="text-center text-[13px] sm:text-[14px] leading-relaxed text-on-background/80 dark:text-on-background/90 max-w-[85%] sm:max-w-md mx-auto mb-6 font-body-md animate-fade-up delay-300"
           style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
           Code Busters & Coding Club is the official Tech Club of <strong className="font-bold text-on-background">Netaji Subhas University</strong> which brings together coders, innovators, and problem-solvers.
         </p>
 
         {/* CTA Buttons */}
-        <div className="w-full max-w-[320px] flex flex-col gap-3.5 mb-10 animate-fade-up delay-400">
+        <div className="w-full max-w-[320px] flex flex-col gap-3 mb-7 animate-fade-up delay-400">
           <button
             className="flex items-center justify-between w-full px-6 py-4 bg-black text-white dark:bg-white dark:text-black rounded-2xl font-body-md font-semibold text-[14px] transition-all duration-300 hover:opacity-90 active:scale-98 shadow-md cursor-pointer border border-transparent"
           >
