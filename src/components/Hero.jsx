@@ -3,17 +3,29 @@ export default function Hero() {
     <main className="relative min-h-screen w-full bg-background select-none transition-colors duration-300">
       
       {/* Mobile & Tablet Layout (< md breakpoint) */}
-      <div className="flex md:hidden flex-col items-center w-full min-h-screen px-6 py-20 select-none relative z-20">
+      <div className="flex md:hidden flex-col items-center w-full min-h-screen px-6 pt-16 pb-12 select-none relative z-20">
         
         {/* Robot Image & Glowing Halo */}
-        <div className="relative w-[65vw] max-w-[280px] aspect-square flex items-center justify-center mb-2 animate-fade-up">
-          {/* Halo Circle Outline with Glow */}
-          <div className="absolute inset-0 rounded-full border border-black/10 dark:border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.02)] dark:shadow-[0_0_40px_rgba(255,255,255,0.06)] bg-gradient-to-b from-transparent to-black/[0.01] dark:to-white/[0.005]"></div>
-          {/* Outer glow aura ring */}
-          <div className="absolute inset-4 rounded-full border border-black/5 dark:border-white/5"></div>
+        <div className="relative w-[82vw] sm:w-[75vw] max-w-[350px] aspect-square flex items-center justify-center mb-3 animate-fade-up">
+          {/* 1. Large Soft Outer Glow (Radial White Glow) */}
+          <div className="absolute w-[118%] h-[118%] rounded-full bg-white dark:bg-white/10 blur-2xl opacity-95 dark:opacity-40 z-0 pointer-events-none" />
+
+          {/* 2. Soft Inner Glow Circle */}
+          <div className="absolute w-[100%] h-[100%] rounded-full bg-white/75 dark:bg-white/[0.04] blur-md z-0 pointer-events-none" />
+
+          {/* 3. Primary Glowing Outer Ring */}
+          <div className="absolute w-[94%] h-[94%] rounded-full border border-white dark:border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.95),inset_0_0_20px_rgba(255,255,255,0.85)] dark:shadow-[0_0_25px_rgba(255,255,255,0.15)] z-0 pointer-events-none blur-[0.5px]" />
+
+          {/* 4. Defining Thin Ring (Light gray in light theme, white in dark theme) */}
+          <div className="absolute w-[94%] h-[94%] rounded-full border border-black/10 dark:border-white/15 z-0 pointer-events-none" />
+
+          {/* 5. Inner Accent Ring */}
+          <div className="absolute w-[82%] h-[82%] rounded-full border border-black/5 dark:border-white/10 opacity-80 z-0 pointer-events-none" />
+
+          {/* Robot Image */}
           <img
             alt="CBNCC Chrome Robot Profile"
-            className="h-full w-auto object-contain z-10 select-none"
+            className="h-full w-auto object-contain z-10 select-none relative drop-shadow-[0_12px_24px_rgba(0,0,0,0.12)] dark:drop-shadow-[0_16px_32px_rgba(0,0,0,0.5)]"
             src="/robo.png"
           />
         </div>
