@@ -61,7 +61,7 @@ export default function Navigation() {
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="w-10 h-10 rounded-full border border-on-background/15 flex items-center justify-center hover:bg-on-background/5 transition-all duration-300 cursor-pointer select-none text-on-background"
+              className="hidden md:flex w-10 h-10 rounded-full border border-on-background/15 items-center justify-center hover:bg-on-background/5 transition-all duration-300 cursor-pointer select-none text-on-background"
               title="Toggle Theme"
             >
               <span className="material-symbols-outlined text-lg ">
@@ -170,8 +170,20 @@ export default function Navigation() {
           </a>
         </nav>
 
-        {/* Drawer Actions - JOIN US CTA */}
-        <div className="mt-auto pt-6 border-t border-on-background/10">
+        {/* Drawer Actions - Theme Toggle & JOIN US CTA */}
+        <div className="mt-auto pt-6 border-t border-on-background/10 flex flex-col gap-4">
+          <button
+            onClick={toggleTheme}
+            className="w-full justify-between px-6 py-3 border border-on-background/15 rounded-full font-body-md text-[14px] font-semibold text-on-background hover:bg-on-background/5 transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-sm"
+          >
+            <span className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-lg">
+                {isDark ? 'light_mode' : 'dark_mode'}
+              </span>
+              {isDark ? 'LIGHT MODE' : 'DARK MODE'}
+            </span>
+          </button>
+
           <button className="w-full justify-center px-6 py-3 border border-on-background rounded-full font-body-md text-[14px] font-semibold text-on-background hover:bg-on-background hover:text-background transition-all duration-300 flex items-center gap-2 group cursor-pointer shadow-sm">
             JOIN US
             <span className="material-symbols-outlined text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" data-icon="north_east">

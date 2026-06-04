@@ -96,14 +96,21 @@
   background-size: 100% 100%;
 }
 
-/* Hide scrollbar by default for premium look */
+/* Hide scrollbar by default for premium look, scrollable on mobile/tablet */
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  html, body {
+    overflow: hidden;
+  }
 }
 
 /* Glassmorphism utility */
@@ -149,6 +156,38 @@ html, body {
 .hover-underline-slide:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+/* Fade up animations for premium feel */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
 }
 
 /* Custom Selection style */
