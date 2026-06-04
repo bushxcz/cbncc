@@ -13,14 +13,7 @@ export default function Hero() {
           {/* 2. Soft Inner Glow Circle */}
           <div className="absolute w-[100%] aspect-square rounded-full bg-white/75 dark:bg-white/[0.04] blur-md z-0 pointer-events-none" />
 
-          {/* 3. Primary Glowing Outer Ring */}
-          <div className="absolute w-[94%] aspect-square rounded-full border border-white dark:border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.95),inset_0_0_20px_rgba(255,255,255,0.85)] dark:shadow-[0_0_25px_rgba(255,255,255,0.15)] z-0 pointer-events-none blur-[0.5px]" />
-
-          {/* 4. Defining Thin Ring (Light gray in light theme, white in dark theme) */}
-          <div className="absolute w-[94%] aspect-square rounded-full border border-black/10 dark:border-white/15 z-0 pointer-events-none" />
-
-          {/* 5. Inner Accent Ring */}
-          <div className="absolute w-[82%] aspect-square rounded-full border border-black/5 dark:border-white/10 opacity-80 z-0 pointer-events-none" />
+          
 
           {/* Robot Image */}
           <img
@@ -30,7 +23,7 @@ export default function Hero() {
           />
 
           {/* Bottom fade mask to blend robot into the background */}
-          <div className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-background via-background/80 to-transparent z-20 pointer-events-none" />
+          
         </div>
 
         {/* Title Heading */}
