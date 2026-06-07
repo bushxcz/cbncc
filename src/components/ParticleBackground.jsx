@@ -10,7 +10,7 @@ export default function ParticleBackground() {
     const ctx = canvas.getContext('2d');
     let animationFrameId;
     let particles = [];
-    const particleCount = 45;
+    const particleCount = 50;
     const mouse = { x: null, y: null, radius: 120 };
 
     const resizeCanvas = () => {
@@ -34,12 +34,6 @@ export default function ParticleBackground() {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseleave', handleMouseLeave);
 
-    // Helper to get current theme color for particles
-    const getParticleColor = () => {
-      const isDark = document.documentElement.classList.contains('dark');
-      return isDark ? 'rgba(255, 255, 255, 0.45)' : 'rgba(0, 0, 0, 0.45)';
-    };
-
     // Particle class definition
     class Particle {
       constructor() {
@@ -49,10 +43,10 @@ export default function ParticleBackground() {
       reset(init = false) {
         this.x = Math.random() * canvas.width;
         this.y = init ? Math.random() * canvas.height : canvas.height + 10;
-        this.size = Math.random() * 2.5 + 0.5;
-        this.speedX = Math.random() * 0.4 - 0.2;
-        this.speedY = -(Math.random() * 0.5 + 0.2); // Float upwards
-        this.alpha = Math.random() * 0.5 + 0.15;
+        this.size = Math.random() * 2 + 0.4;
+        this.speedX = Math.random() * 0.3 - 0.15;
+        this.speedY = -(Math.random() * 0.4 + 0.15); // Float upwards
+        this.alpha = Math.random() * 0.3 + 0.05;
         this.baseAlpha = this.alpha;
         this.originX = this.x;
         this.originY = this.y;
@@ -89,7 +83,7 @@ export default function ParticleBackground() {
         ctx.save();
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = getParticleColor();
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
         ctx.fill();
         ctx.restore();
       }
@@ -124,8 +118,7 @@ export default function ParticleBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-10 w-full h-full"
-      style={{ mixBlendMode: 'difference' }}
+      className="fixed inset-0 pointer-events-none z-[1] w-full h-full"
     />
   );
 }
