@@ -24,8 +24,8 @@ export const QuoteSection = ({ quotes, interval = 6000 }) => {
       variants={staggerContainer}
     >
       <div className="max-w-[1200px] mx-auto text-center relative">
-        <span className="font-display-xl text-primary/5 text-[150px] md:text-[300px] absolute -top-20 md:-top-32 left-0 select-none pointer-events-none leading-none">
-          "
+        <span className="font-serif italic text-primary/5 text-[150px] md:text-[300px] absolute -top-20 md:-top-32 left-0 select-none pointer-events-none leading-none rotate-[-15deg]">
+          &ldquo;
         </span>
 
         <AnimatePresence mode="wait">
@@ -53,13 +53,13 @@ export const QuoteSection = ({ quotes, interval = 6000 }) => {
           </motion.blockquote>
         </AnimatePresence>
 
-        <span className="font-display-xl text-primary/5 text-[150px] md:text-[300px] absolute -bottom-24 md:-bottom-40 right-0 select-none pointer-events-none rotate-180 leading-none">
-          "
+        <span className="font-serif italic text-primary/5 text-[150px] md:text-[300px] absolute -bottom-24 md:-bottom-40 right-0 select-none pointer-events-none rotate-[15deg] leading-none">
+          &rdquo;
         </span>
 
         <motion.div
           variants={staggerContainer}
-          className="mt-20 md:mt-32 flex justify-center items-center gap-6"
+          className="mt-8 md:mt-12 flex justify-center items-center gap-6"
         >
           <motion.div
             variants={staggerItem}
