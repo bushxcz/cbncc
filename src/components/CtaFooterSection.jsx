@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function CtaFooterSection() {
   const [email, setEmail] = useState("");
@@ -100,8 +101,8 @@ export default function CtaFooterSection() {
 
               {/* CTA Action Buttons */}
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                <a
-                  href="#join"
+                <Link
+                  to="/#join"
                   className="relative overflow-hidden group/btn inline-flex items-center justify-center gap-2 rounded-2xl bg-foreground px-8 py-4.5 text-[15px] font-bold text-background shadow-lg shadow-card-shadow transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:opacity-90 active:scale-[0.98] w-full sm:w-auto"
                 >
                   <span>Join CBNCC</span>
@@ -119,14 +120,14 @@ export default function CtaFooterSection() {
                       d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
                     />
                   </svg>
-                </a>
+                </Link>
 
-                <a
-                  href="#about"
+                <Link
+                  to="/#about"
                   className="inline-flex items-center justify-center gap-2 rounded-2xl border border-card-border bg-card-bg backdrop-blur-md px-8 py-4.5 text-[15px] font-bold text-foreground transition-all duration-300 hover:bg-foreground/5 hover:border-foreground/20 w-full sm:w-auto shadow-sm"
                 >
                   Explore Projects
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -243,14 +244,14 @@ export default function CtaFooterSection() {
                   <ul className="space-y-2.5">
                     {["About Us", "Our Team", "Projects", "Events"].map((link) => (
                       <li key={link}>
-                        <a
-                          href={`#${link.toLowerCase().replace(" ", "-")}`}
+                        <Link
+                          to={`/#${link.toLowerCase().replace(" ", "-")}`}
                           className="text-sm text-muted hover:text-foreground transition-colors relative py-0.5 group inline-flex items-center gap-2"
                         >
                           <span className="text-muted/60 text-xs group-hover:text-foreground transition-colors">&gt;</span>
                           {link}
                           <span className="absolute bottom-0 left-4 w-0 h-[1.5px] bg-foreground transition-all duration-300 group-hover:w-[calc(100%-16px)]" />
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -270,14 +271,14 @@ export default function CtaFooterSection() {
                   <ul className="space-y-2.5">
                     {["Tutorials", "Documentation", "Blog", "FAQ"].map((link) => (
                       <li key={link}>
-                        <a
-                          href={`#${link.toLowerCase().replace(" ", "-")}`}
+                        <Link
+                          to={`/#${link.toLowerCase().replace(" ", "-")}`}
                           className="text-sm text-muted hover:text-foreground transition-colors relative py-0.5 group inline-flex items-center gap-2"
                         >
                           <span className="text-muted/60 text-xs group-hover:text-foreground transition-colors">&gt;</span>
                           {link}
                           <span className="absolute bottom-0 left-4 w-0 h-[1.5px] bg-foreground transition-all duration-300 group-hover:w-[calc(100%-16px)]" />
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>

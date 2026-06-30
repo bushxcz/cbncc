@@ -1,17 +1,12 @@
+import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import SideNav from './components/SideNav';
 import HUD from './components/HUD';
-import Hero from './components/Hero';
 import ParticleBackground from './components/ParticleBackground';
 import { NoiseOverlay } from './components/UI';
-import { AboutSection } from './components/About/AboutSection';
-import { QuoteSection } from './components/Quote/QuoteSection';
-import OurDomains from './components/OurDomains';
-import { WhyJoinCBNCC } from './components/WhyJoinCBNCC';
-import CtaFooterSection from './components/CtaFooterSection';
 import { useGlowCursor } from './hooks/useParallax';
-import { aboutData } from './data/aboutData';
-import { quotesData } from './data/quotesData';
+import HomePage from './pages/HomePage';
+import AlumniPage from './pages/AlumniPage';
+import ScrollToTop from './components/ScrollToTop';
 import './styles/globals.css';
 import './styles/WhyJoin.css';
 
@@ -64,15 +59,14 @@ export default function App() {
       {/* HUD overlays and corners */}
       <HUD />
 
-      {/* Main Hero Showcase */}
-      <Hero />
-      
       <NoiseOverlay />
-      <AboutSection data={aboutData} />
-      <QuoteSection quotes={quotesData} />
-      <OurDomains />
-      <WhyJoinCBNCC />
-      <CtaFooterSection />
+
+      <ScrollToTop />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/alumni" element={<AlumniPage />} />
+      </Routes>
 
       {/* Bottom Footer */}
       <footer className="fixed bottom-0 left-0 w-full px-margin-mobile md:px-margin-desktop py-gutter flex justify-between items-end z-40 pointer-events-none select-none hidden md:flex">
@@ -85,3 +79,4 @@ export default function App() {
     </div>
   );
 }
+
