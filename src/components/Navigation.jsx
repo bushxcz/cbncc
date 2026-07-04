@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,24 +17,24 @@ export default function Navigation() {
 
           {/* Desktop Menu - visible on md and up */}
           <nav className="hidden md:flex gap-8 font-body-md text-[14px] font-medium items-center">
-            <a className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" href="#about">
-              ABOUT US
-            </a>
-            <a className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" href="#team">
+            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#about">
+              HOME PAGE
+            </Link>
+            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#team">
               TEAM
-            </a>
-            <a className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" href="#alumni">
+            </Link>
+            <NavLink className={({ isActive }) => `transition-colors duration-300 hover-underline-slide ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`} to="/alumni">
               ALUMNI
-            </a>
-            <a className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" href="#contact">
+            </NavLink>
+            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#contact">
               CONTACT US
-            </a>
-            <a className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" href="#events">
+            </Link>
+            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#events">
               EVENTS
-            </a>
-            <a className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" href="#faq">
+            </Link>
+            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#faq">
               FAQ
-            </a>
+            </Link>
           </nav>
 
           {/* Actions (Join Us + Hamburger Menu) */}
@@ -94,48 +95,48 @@ export default function Navigation() {
 
         {/* Drawer Navigation Links */}
         <nav className="flex flex-col gap-6 font-body-md text-[18px] font-medium">
-          <a
+          <Link
             className="text-white/60 hover:text-white transition-colors duration-300"
-            href="#about"
+            to="/#about"
             onClick={() => setIsMenuOpen(false)}
           >
             ABOUT US
-          </a>
-          <a
+          </Link>
+          <Link
             className="text-white/60 hover:text-white transition-colors duration-300"
-            href="#team"
+            to="/#team"
             onClick={() => setIsMenuOpen(false)}
           >
             TEAM
-          </a>
-          <a
-            className="text-white/60 hover:text-white transition-colors duration-300"
-            href="#alumni"
+          </Link>
+          <NavLink
+            className={({ isActive }) => `transition-colors duration-300 ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`}
+            to="/alumni"
             onClick={() => setIsMenuOpen(false)}
           >
             ALUMNI
-          </a>
-          <a
+          </NavLink>
+          <Link
             className="text-white/60 hover:text-white transition-colors duration-300"
-            href="#contact"
+            to="/#contact"
             onClick={() => setIsMenuOpen(false)}
           >
             CONTACT US
-          </a>
-          <a
+          </Link>
+          <Link
             className="text-white/60 hover:text-white transition-colors duration-300"
-            href="#events"
+            to="/#events"
             onClick={() => setIsMenuOpen(false)}
           >
             EVENTS
-          </a>
-          <a
+          </Link>
+          <Link
             className="text-white/60 hover:text-white transition-colors duration-300"
-            href="#faq"
+            to="/#faq"
             onClick={() => setIsMenuOpen(false)}
           >
             FAQ
-          </a>
+          </Link>
         </nav>
 
         {/* Drawer Actions — JOIN US CTA only */}

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Hero() {
   return (
     <main className="relative min-h-screen w-full bg-transparent select-none">
@@ -63,30 +65,30 @@ export default function Hero() {
 
         {/* Navigation Shortcuts Bar (Floating Glassmorphism pill) */}
         <div className="glass-panel w-full max-w-[360px] p-2.5 rounded-2xl flex justify-between items-center z-30 shadow-[0_4px_30px_rgba(0,0,0,0.2)] border border-white/10 bg-[#0d1117]/70 backdrop-blur-md mb-6 animate-fade-up delay-500">
-          <a href="#about" className="flex flex-col items-center justify-center flex-1 py-1 gap-1 cursor-pointer text-white/70 hover:text-white transition-colors min-h-[44px]">
+          <Link to="/#about" className="flex flex-col items-center justify-center flex-1 py-1 gap-1 cursor-pointer text-white/70 hover:text-white transition-colors min-h-[44px]">
             <span className="material-symbols-outlined text-[20px]">account_circle</span>
             <span className="text-[8px] font-bold tracking-wider font-label-caps uppercase text-center">About Us</span>
-          </a>
+          </Link>
           <div className="w-[1px] h-6 bg-white/10"></div>
-          <a href="#team" className="flex flex-col items-center justify-center flex-1 py-1 gap-1 cursor-pointer text-white/70 hover:text-white transition-colors min-h-[44px]">
+          <Link to="/#team" className="flex flex-col items-center justify-center flex-1 py-1 gap-1 cursor-pointer text-white/70 hover:text-white transition-colors min-h-[44px]">
             <span className="material-symbols-outlined text-[20px]">groups</span>
             <span className="text-[8px] font-bold tracking-wider font-label-caps uppercase text-center">Team</span>
-          </a>
+          </Link>
           <div className="w-[1px] h-6 bg-white/10"></div>
-          <a href="#events" className="flex flex-col items-center justify-center flex-1 py-1 gap-1 cursor-pointer text-white/70 hover:text-white transition-colors min-h-[44px]">
+          <Link to="/#events" className="flex flex-col items-center justify-center flex-1 py-1 gap-1 cursor-pointer text-white/70 hover:text-white transition-colors min-h-[44px]">
             <span className="material-symbols-outlined text-[20px]">calendar_month</span>
             <span className="text-[8px] font-bold tracking-wider font-label-caps uppercase text-center">Events</span>
-          </a>
+          </Link>
           <div className="w-[1px] h-6 bg-white/10"></div>
-          <a href="#alumni" className="flex flex-col items-center justify-center flex-1 py-1 gap-1 cursor-pointer text-white/70 hover:text-white transition-colors min-h-[44px]">
+          <Link to="/alumni" className="flex flex-col items-center justify-center flex-1 py-1 gap-1 cursor-pointer text-white/70 hover:text-white transition-colors min-h-[44px]">
             <span className="material-symbols-outlined text-[20px]">school</span>
             <span className="text-[8px] font-bold tracking-wider font-label-caps uppercase text-center">Alumni</span>
-          </a>
+          </Link>
           <div className="w-[1px] h-6 bg-white/10"></div>
-          <a href="#contact" className="flex flex-col items-center justify-center flex-1 py-1 gap-1 cursor-pointer text-white/70 hover:text-white transition-colors min-h-[44px]">
+          <Link to="/#contact" className="flex flex-col items-center justify-center flex-1 py-1 gap-1 cursor-pointer text-white/70 hover:text-white transition-colors min-h-[44px]">
             <span className="material-symbols-outlined text-[20px]">mail</span>
             <span className="text-[8px] font-bold tracking-wider font-label-caps uppercase text-center">Contact</span>
-          </a>
+          </Link>
         </div>
 
         {/* Scroll Indicator */}
