@@ -2,6 +2,6 @@ export const aboutData = {
   label: "ABOUT CBNCC",
   title: "WHO WE\nARE?",
   description:
-    "CBNCC is a student-driven coding and innovation community at Netaji Subhas University focused on learning, collaboration, and technical growth. We create opportunities for students to explore technology, strengthen problem-solving skills, and grow through shared learning experiences, projects, hackathons, and workshops.",
+    "CBNCC is a student-led coding and innovation community at Netaji Subhas University. We empower students to learn, collaborate, and build the future together through projects, workshops, and hackathons.",
   cta: "EXPLORE THE COLLECTIVE",
 };

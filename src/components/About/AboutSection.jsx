@@ -24,7 +24,7 @@ export const AboutSection = ({ data }) => {
           <motion.div variants={staggerItem} className="mt-4">
             <CinematicHeading 
               text={data.title} 
-              className="!text-[clamp(2.7rem,15vw,5rem)] md:!text-[140px] lg:!text-[180px]"
+              className="!text-[clamp(2.2rem,10vw,3.5rem)] md:!text-[80px] lg:!text-[100px]"
             />
           </motion.div>
           {/* Metadata Block */}
