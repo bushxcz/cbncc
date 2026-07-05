@@ -26,14 +26,6 @@ export default function App() {
         <Route path="/events" element={<Events />} />
       </Routes>
 
-      {/* Bottom Footer */}
-      <footer className="fixed bottom-0 left-0 w-full px-margin-mobile md:px-margin-desktop py-gutter flex justify-between items-end z-40 pointer-events-none select-none hidden md:flex bg-[#0d1117]">
-        <div className="pointer-events-auto">
-          <p className="font-body-md text-[9px] sm:text-[10px] text-white/40 tracking-widest font-semibold">
-            © {new Date().getFullYear()} CBNCC • AI • AUTOMATION • FUTURE
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }
