@@ -35,7 +35,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p
-            className="text-[clamp(0.95rem,4.4vw,1.3rem)] leading-relaxed text-white mb-8 font-body-md animate-fade-up delay-200 max-w-[14rem] sm:max-w-none translate-x-[2px]"
+            className="text-[clamp(0.95rem,4.4vw,1.3rem)] leading-relaxed text-white mb-8 font-body-md animate-fade-up delay-200 max-w-[14rem] sm:max-w-none pl-[10px]"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             A community of<br />
@@ -102,7 +102,7 @@ export default function Hero() {
 
         <div className="absolute bottom-48 sm:bottom-15 left-4 md:left-20 z-30 max-w-md hidden sm:block">
           <p
-            className="text-[clamp(0.95rem,4vw,1.3rem)] leading-relaxed text-white mb-8 font-body-md animate-fade-up delay-200 translate-x-[2px]"
+            className="text-[clamp(0.95rem,4vw,1.3rem)] leading-relaxed text-white mb-8 font-body-md animate-fade-up delay-200 pl-[10px]"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             A community of
