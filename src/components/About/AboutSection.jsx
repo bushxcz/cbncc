@@ -5,7 +5,7 @@ import { SectionLabel, CinematicHeading } from "../UI";
 export const AboutSection = ({ data }) => {
   return (
     <motion.section
-      className="px-4 md:px-grid-margin py-20 md:py-section-gap relative overflow-hidden"
+      className="px-4 md:px-grid-margin py-14 sm:py-20 md:py-section-gap relative overflow-hidden"
       id="about"
       initial="hidden"
       whileInView="visible"
@@ -24,7 +24,7 @@ export const AboutSection = ({ data }) => {
           <motion.div variants={staggerItem} className="mt-4">
             <CinematicHeading 
               text={data.title} 
-              className="!text-[clamp(3.4rem,16vw,5rem)] md:!text-[140px] lg:!text-[180px]"
+              className="!text-[clamp(2.7rem,15vw,5rem)] md:!text-[140px] lg:!text-[180px]"
             />
           </motion.div>
           {/* Metadata Block */}
@@ -39,7 +39,7 @@ export const AboutSection = ({ data }) => {
         <div className="md:col-span-5 lg:col-span-4 space-y-8 md:space-y-12">
           <motion.div variants={staggerItem} className="space-y-6">
             <div className="w-12 h-[1px] bg-primary/20" />
-            <p className="font-body-lg text-[18px] md:text-[20px] text-on-surface-variant leading-relaxed font-light">
+            <p className="font-body-lg text-[16px] sm:text-[18px] md:text-[20px] text-on-surface-variant leading-relaxed font-light">
               {data.description}
             </p>
           </motion.div>

@@ -88,27 +88,6 @@ export default function OurDomains() {
     }
   };
 
-  const blobVariants = {
-    animate1: {
-      x: [0, 50, -30, 0],
-      y: [0, -40, 30, 0],
-      transition: {
-        duration: 20,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    },
-    animate2: {
-      x: [0, -60, 40, 0],
-      y: [0, 50, -40, 0],
-      transition: {
-        duration: 25,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   const renderIcon = (tech, className) => {
     if (tech.icon === 'ai-file') return <AiIcon className={className} />;
     if (tech.icon === 'pandas') return <PandasIcon className={className} />;
@@ -121,30 +100,6 @@ export default function OurDomains() {
 
   return (
     <section id="domains" className="relative w-full py-10 md:py-14 px-4 md:px-8 xl:px-12 bg-transparent overflow-hidden select-none">
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.28]"
-        style={{
-          backgroundImage: `
-            radial-gradient(rgba(255, 255, 255, 0.16) 1.5px, transparent 1.5px),
-            linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px)
-          `,
-          backgroundSize: '24px 24px, 48px 48px, 48px 48px',
-          backgroundPosition: 'center center'
-        }}
-      />
-
-      <motion.div 
-        variants={blobVariants}
-        animate="animate1"
-        className="absolute top-1/4 left-1/10 w-[400px] h-[400px] rounded-full bg-cyan-400/10 filter blur-[100px] pointer-events-none"
-      />
-      <motion.div 
-        variants={blobVariants}
-        animate="animate2"
-        className="absolute bottom-1/4 right-1/10 w-[500px] h-[500px] rounded-full bg-fuchsia-500/10 filter blur-[120px] pointer-events-none"
-      />
-
       <div className="relative max-w-[90rem] mx-auto z-10">
         
         <div className="text-center mb-8 md:mb-10">
@@ -173,7 +128,7 @@ export default function OurDomains() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-space text-base md:text-lg text-white/65 max-w-4xl mx-auto leading-relaxed"
+          className="font-space text-sm sm:text-base md:text-lg text-white/65 max-w-4xl mx-auto leading-relaxed px-1"
           >
             Explore the core technology pillars driving developer communities, shaping engineering talents, and engineering software products.
           </motion.p>
@@ -184,7 +139,7 @@ export default function OurDomains() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-5 xl:gap-6 w-full max-w-[calc(100vw-8rem)] 2xl:max-w-[104rem] mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-5 xl:gap-6 w-full max-w-full 2xl:max-w-[104rem] mx-auto"
         >
           {domainsData.map((tech) => {
             return (
@@ -203,7 +158,7 @@ export default function OurDomains() {
                 title={tech.name}
               >
                 <div className="relative z-10 flex items-center justify-center w-full h-full p-3">
-                  {renderIcon(tech, "w-20 h-20 md:w-24 md:h-24 xl:w-28 xl:h-28 text-white/80 group-hover:text-[var(--hover-color)] transition-colors duration-500")}
+                  {renderIcon(tech, "w-14 h-14 sm:w-18 sm:h-18 md:w-24 md:h-24 xl:w-28 xl:h-28 text-white/80 group-hover:text-[var(--hover-color)] transition-colors duration-500")}
                 </div>
                 {/* Thin overlay border highlighting the brand color on hover */}
                 <div 

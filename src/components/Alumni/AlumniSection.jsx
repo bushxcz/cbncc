@@ -34,17 +34,7 @@ export default function AlumniSection() {
       {/* Background grid/dot overlay */}
       <div className="absolute inset-0 premium-bg-grid opacity-[0.22] pointer-events-none z-0" />
 
-      {/* Scoped glow orbs */}
-      <motion.div
-        animate={{ x: [0, 40, -20, 0], y: [0, -30, 20, 0] }}
-        transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 left-[5%] w-[400px] h-[400px] rounded-full bg-indigo-500/10 filter blur-[100px] pointer-events-none z-0"
-      />
-      <motion.div
-        animate={{ x: [0, -40, 30, 0], y: [0, 30, -25, 0] }}
-        transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/4 right-[5%] w-[450px] h-[450px] rounded-full bg-cyan-500/10 filter blur-[110px] pointer-events-none z-0"
-      />
+
 
       <div className="relative max-w-[90rem] mx-auto z-10 flex flex-col items-center">
         {/* Header Block */}
@@ -53,9 +43,10 @@ export default function AlumniSection() {
           <h2 className="relative mb-8 md:mb-12 leading-none">
             {/* Line 1 — clean bold sans-serif */}
             <span
-              className="block font-extrabold uppercase text-white"
+              className="block font-extrabold uppercase"
               style={{
-                fontFamily: "'Sora', 'Montserrat', sans-serif",
+                fontFamily: "'Sora', sans-serif",
+                color: "rgba(255, 255, 255, 0.9)",
                 fontSize: "clamp(2.2rem, 5.5vw, 4.5rem)",
                 letterSpacing: "-0.02em",
               }}
@@ -79,7 +70,7 @@ export default function AlumniSection() {
             </span>
 
             {/* Centered hairline accent */}
-            <span className="block mx-auto mt-5 h-px w-20 bg-gradient-to-r from-transparent via-indigo-400/50 to-transparent" />
+            <span className="block mx-auto mt-5 h-px w-20 bg-white/20" />
           </h2>
           <p className="font-body-lg text-base md:text-lg text-white/65 leading-relaxed">
             Our alumni are building the future across global tech companies, innovative startups, and top-tier research institutions. Discover their achievements and testimonials.
@@ -95,8 +86,8 @@ export default function AlumniSection() {
                 key={stat.id}
                 className="relative flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl px-5 py-6 text-center overflow-hidden transition-all duration-300 hover:border-white/20 hover:-translate-y-1 group"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(99,102,241,0.12),transparent_70%)] pointer-events-none" />
-                <Icon size={20} className="text-indigo-300/80 relative z-10 transition-transform duration-300 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03),transparent_70%)] pointer-events-none" />
+                <Icon size={20} className="text-white/50 relative z-10 transition-transform duration-300 group-hover:scale-110" />
                 <p className="font-display-xl text-2xl md:text-3xl font-extrabold text-white relative z-10">
                   {stat.value}
                   {stat.suffix}
@@ -123,10 +114,10 @@ export default function AlumniSection() {
               variants={staggerItem}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative w-full max-w-[340px] flex flex-col items-center text-center rounded-[24px] border border-white/10 bg-white/[0.05] backdrop-blur-xl overflow-hidden p-6 transition-[border-color,box-shadow,background-color] duration-300 ease-out shadow-[0_12px_30px_rgba(0,0,0,0.28)] hover:border-indigo-400/30 hover:bg-white/[0.07] hover:shadow-[0_18px_44px_rgba(99,102,241,0.18)]"
+              className="group relative w-full max-w-[340px] flex flex-col items-center text-center rounded-[24px] border border-white/10 bg-white/[0.05] backdrop-blur-xl overflow-hidden p-6 transition-[border-color,box-shadow,background-color] duration-300 ease-out shadow-[0_12px_30px_rgba(0,0,0,0.28)] hover:border-white/20 hover:bg-white/[0.07] hover:shadow-[0_18px_44px_rgba(255,255,255,0.05)]"
             >
               {/* Card Hover Ambient Orb */}
-              <div className="absolute inset-0 opacity-60 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none bg-[radial-gradient(circle_at_50%_-10%,rgba(99,102,241,0.16),transparent_65%)]" />
+              <div className="absolute inset-0 opacity-60 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none bg-[radial-gradient(circle_at_50%_-10%,rgba(255,255,255,0.04),transparent_65%)]" />
 
               {/* Avatar Photo / Initials Fallback */}
               <div className="relative z-10 w-28 h-28 rounded-full overflow-hidden border border-white/15 bg-white/[0.05] flex items-center justify-center mb-4 transition-transform duration-300 ease-out group-hover:scale-105">

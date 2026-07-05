@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ecebec;
+  --background: #0d1117;
   --foreground: #111111;
   --card-bg: rgba(255, 255, 255, 0.45);
   --card-border: rgba(255, 255, 255, 0.6);
@@ -24,12 +24,26 @@
   --accent-hover: #e2e2e7;
   --muted: #a0a0aa;
   --divider: rgba(255, 255, 255, 0.08);
-  --orb-top: #4f46e5;
-  --orb-bottom: #7c3aed;
+  --orb-top: #4b5563;
+  --orb-bottom: #1f2937;
 }
 
 @theme {
-  /* Colors — locked to dark mode (#0D1117 palette) */
+  /* Colors — matching hero section (#0d1117 background) */
+  --color-bg: #0d1117;
+  --color-surface: #0a0a0a;
+  --color-surface-light: #111111;
+  --color-gold: #FFD54F;
+  --color-gold-dim: #b8982e;
+  --color-gold-glow: rgba(255, 213, 79, 0.15);
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #888888;
+  --color-text-muted: #555555;
+  --color-glass-border: rgba(255, 255, 255, 0.06);
+  --color-glass-bg: rgba(255, 255, 255, 0.03);
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-display: "Sora", sans-serif;
+
   --color-surface-variant: #21262d;
   --color-on-secondary-container: #c9d1d9;
   --color-on-secondary: #ffffff;
@@ -366,3 +380,22 @@ html, body {
   transform-style: preserve-3d;
   animation: earth-spin 24s linear infinite;
 }
+
+/* Global headings styling: Sora font and rgba(255, 255, 255, 0.9) color */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sora', sans-serif !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Retain transparency for gradient text headings */
+h1.text-transparent, 
+h2.text-transparent, 
+h3.text-transparent, 
+h4.text-transparent, 
+h5.text-transparent, 
+h6.text-transparent,
+[class*="text-transparent"] {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+

@@ -17,7 +17,7 @@ export const QuoteSection = ({ quotes, interval = 6000 }) => {
 
   return (
     <motion.section
-      className="py-24 md:py-[180px] px-4 md:px-grid-margin relative overflow-hidden bg-transparent"
+      className="py-16 sm:py-24 md:py-[180px] px-4 md:px-grid-margin relative overflow-hidden bg-transparent"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -35,7 +35,7 @@ export const QuoteSection = ({ quotes, interval = 6000 }) => {
             animate="visible"
             exit="hidden"
             variants={scaleIn}
-            className="font-display-xl text-[48px] md:text-[110px] lg:text-[130px] text-primary tracking-tight leading-[1.1] relative z-10 px-4 py-12"
+            className="font-display-xl text-[clamp(2.15rem,12vw,3rem)] md:text-[110px] lg:text-[130px] text-primary tracking-tight leading-[1.08] md:leading-[1.1] relative z-10 px-1 sm:px-4 py-10 sm:py-12"
           >
             {currentQuote.quote.split("\n").map((line, i) => (
               <div key={i} className="my-2 md:my-4">
@@ -59,21 +59,21 @@ export const QuoteSection = ({ quotes, interval = 6000 }) => {
 
         <motion.div
           variants={staggerContainer}
-          className="mt-8 md:mt-12 flex justify-center items-center gap-6"
+          className="mt-6 md:mt-12 flex justify-center items-center gap-3 sm:gap-6"
         >
           <motion.div
             variants={staggerItem}
-            className="w-12 md:w-24 h-[1px] bg-primary/20"
+            className="w-8 sm:w-12 md:w-24 h-[1px] bg-primary/20"
           />
           <motion.p
             variants={staggerItem}
-            className="font-label-mono text-[11px] md:text-[13px] uppercase tracking-[0.3em] text-on-surface-variant font-medium"
+            className="font-label-mono text-[10px] md:text-[13px] uppercase tracking-[0.18em] sm:tracking-[0.3em] text-on-surface-variant font-medium"
           >
             {currentQuote.meta}
           </motion.p>
           <motion.div
             variants={staggerItem}
-            className="w-12 md:w-24 h-[1px] bg-primary/20"
+            className="w-8 sm:w-12 md:w-24 h-[1px] bg-primary/20"
           />
         </motion.div>
       </div>

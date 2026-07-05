@@ -7,7 +7,7 @@ export const VisionSection = ({ data }) => {
 
   return (
     <motion.section
-      className="relative py-20 md:py-section-gap overflow-hidden bg-surface-bright"
+      className="relative py-20 md:py-section-gap overflow-hidden bg-[#0d1117]"
       id="vision"
       initial="hidden"
       whileInView="visible"

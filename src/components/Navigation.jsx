@@ -17,19 +17,16 @@ export default function Navigation() {
 
           {/* Desktop Menu - visible on md and up */}
           <nav className="hidden md:flex gap-8 font-body-md text-[14px] font-medium items-center">
-            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#about">
-              HOME PAGE
+            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/">
+              HOME
             </Link>
             <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#team">
-              TEAM
+              OUR TEAM
             </Link>
             <NavLink className={({ isActive }) => `transition-colors duration-300 hover-underline-slide ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`} to="/alumni">
               ALUMNI
             </NavLink>
-            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#contact">
-              CONTACT US
-            </Link>
-            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#events">
+            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/events">
               EVENTS
             </Link>
             <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#faq">
@@ -97,17 +94,17 @@ export default function Navigation() {
         <nav className="flex flex-col gap-6 font-body-md text-[18px] font-medium">
           <Link
             className="text-white/60 hover:text-white transition-colors duration-300"
-            to="/#about"
+            to="/"
             onClick={() => setIsMenuOpen(false)}
           >
-            ABOUT US
+            HOME
           </Link>
           <Link
             className="text-white/60 hover:text-white transition-colors duration-300"
             to="/#team"
             onClick={() => setIsMenuOpen(false)}
           >
-            TEAM
+            OUR TEAM
           </Link>
           <NavLink
             className={({ isActive }) => `transition-colors duration-300 ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`}
@@ -118,14 +115,7 @@ export default function Navigation() {
           </NavLink>
           <Link
             className="text-white/60 hover:text-white transition-colors duration-300"
-            to="/#contact"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            CONTACT US
-          </Link>
-          <Link
-            className="text-white/60 hover:text-white transition-colors duration-300"
-            to="/#events"
+            to="/events"
             onClick={() => setIsMenuOpen(false)}
           >
             EVENTS
