@@ -18,9 +18,6 @@ export const AboutSection = ({ data }) => {
 
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-element-gap items-center relative z-10">
         <div className="md:col-span-7 lg:col-span-8 relative">
-          <motion.div variants={staggerItem}>
-            <SectionLabel>{data.label}</SectionLabel>
-          </motion.div>
           <motion.div variants={staggerItem} className="mt-4">
             <CinematicHeading 
               text={data.title} 

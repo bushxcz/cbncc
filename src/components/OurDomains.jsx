@@ -103,15 +103,6 @@ export default function OurDomains() {
       <div className="relative max-w-[90rem] mx-auto z-10">
         
         <div className="text-center mb-8 md:mb-10">
-          <motion.span 
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-block font-space text-[10px] font-bold tracking-[0.28em] uppercase text-white/60 bg-white/[0.07] backdrop-blur-md border border-white/10 px-4 py-1 rounded-full mb-3 shadow-[0_2px_10px_rgba(0,0,0,0.01)]"
-          >
-            CBNCC Ecosystem
-          </motion.span>
           
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}

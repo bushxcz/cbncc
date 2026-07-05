@@ -37,9 +37,7 @@ export default function AlumniSection() {
 
 
       <div className="relative max-w-[90rem] mx-auto z-10 flex flex-col items-center">
-        {/* Header Block */}
         <div className="text-center mb-16 max-w-3xl">
-          <SectionLabel>CBNCC Alumni Network</SectionLabel>
           <h2 className="relative mb-8 md:mb-12 leading-none">
             {/* Line 1 — clean bold sans-serif */}
             <span

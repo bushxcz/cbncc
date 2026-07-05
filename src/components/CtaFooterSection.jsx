@@ -61,11 +61,7 @@ export default function CtaFooterSection() {
             <span></span>
           </div>
 
-          {/* Badge at the top center */}
-          <div className="absolute top-8 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 rounded-full border border-card-border bg-card-bg backdrop-blur-md px-4.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-foreground shadow-sm select-none">
-            <span className="h-2 w-2 rounded-full bg-foreground"></span>
-            CBNCC COMMUNITY
-          </div>
+
 
           {/* Interactive grid container */}
           <div className="relative z-10 flex flex-col items-center justify-center mt-6 lg:mt-0 min-h-[400px] py-12">

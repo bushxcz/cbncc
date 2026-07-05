@@ -132,16 +132,7 @@ export function WhyJoinCBNCC() {
         </div>
 
         <div className="why-join__hero-content">
-          <div className="why-join__eyebrow">
-            <Sparkles size={14} aria-hidden="true" />
-            <ShinyText
-              text="Student tech community"
-              speed={2}
-              className="why-join__eyebrow-text"
-              color="#ffffff"
-              shineColor="#a1a1aa"
-            />
-          </div>
+
           <h1 id="why-join-title" className="why-join__hero-title">
             WHY JOIN <br /> CBNCC?
           </h1>
