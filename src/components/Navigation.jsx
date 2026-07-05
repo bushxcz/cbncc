@@ -3,9 +3,10 @@ import { Link, NavLink } from 'react-router-dom';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  return (
-    <>
+  console.log('Navigation render start');
+  try {
+    return (
+      <>
       <header className="fixed top-0 left-0 w-full z-50 bg-[#0d1117]/80 backdrop-blur-md border-b border-white/10 transition-colors duration-300 text-white">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto animate-fade-in">
           {/* Logo */}
@@ -20,7 +21,7 @@ export default function Navigation() {
             <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/">
               HOME
             </Link>
-            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#team">
+            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/team">
               OUR TEAM
             </Link>
             <NavLink className={({ isActive }) => `transition-colors duration-300 hover-underline-slide ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`} to="/alumni">
@@ -101,7 +102,7 @@ export default function Navigation() {
           </Link>
           <Link
             className="text-white/60 hover:text-white transition-colors duration-300"
-            to="/#team"
+            to="/team"
             onClick={() => setIsMenuOpen(false)}
           >
             OUR TEAM
@@ -139,6 +140,10 @@ export default function Navigation() {
           </button>
         </div>
       </div>
-    </>
-  );
+      </>
+    );
+  } catch (e) {
+    console.error('Navigation render error:', e);
+    throw e;
+  }
 }

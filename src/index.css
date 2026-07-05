@@ -67,7 +67,7 @@
   --color-muted: var(--muted);
   --color-divider: var(--divider);
   --font-heading: Sora, sans-serif;
-  --font-body: "Space Grotesk", sans-serif;
+  --font-body: Sora, sans-serif;
   --color-on-tertiary-fixed: #ffffff;
   --color-surface-tint: #8b949e;
   --color-on-primary-fixed-variant: #c9d1d9;
@@ -106,11 +106,12 @@
   --font-display-xl: Sora, sans-serif;
   --font-display-xl-mobile: Sora, sans-serif;
   --font-headline-lg: Sora, sans-serif;
-  --font-body-md: "Space Grotesk", sans-serif;
-  --font-label-sm: "Space Grotesk", sans-serif;
+  --font-headline-xl: Sora, sans-serif;
+  --font-body-md: Sora, sans-serif;
+  --font-label-sm: Sora, sans-serif;
   --font-headline-lg-mobile: Sora, sans-serif;
-  --font-body-lg: "Space Grotesk", sans-serif;
-  --font-label-caps: "Space Grotesk", sans-serif;
+  --font-body-lg: Sora, sans-serif;
+  --font-label-caps: Sora, sans-serif;
 
   /* Spacing mapping */
   --spacing-gutter: 24px;
@@ -399,3 +400,31 @@ h6.text-transparent,
   -webkit-text-fill-color: transparent !important;
 }
 
+/* Team Page Merged Styles */
+@layer utilities {
+  .ghost-border {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .team-card:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
