@@ -150,12 +150,12 @@ html.lenis, html.lenis body {
   gap: 0.5rem;
   padding: 0.85rem 2rem;
   border-radius: 100px;
-  border: 1px solid rgba(255, 213, 79, 0.3);
-  background: transparent;
-  color: var(--color-gold);
-  font-family: var(--font-sans);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.05em;
   cursor: pointer;
   overflow: hidden;
@@ -166,7 +166,7 @@ html.lenis, html.lenis body {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--color-gold);
+  background: #ffffff;
   border-radius: inherit;
   transform: scaleX(0);
   transform-origin: left;
@@ -175,10 +175,10 @@ html.lenis, html.lenis body {
 }
 
 .btn-premium:hover {
-  border-color: var(--color-gold);
-  color: #050505;
+  border-color: #ffffff;
+  color: #0d1117;
   padding-right: 2.5rem;
-  box-shadow: 0 0 30px rgba(255, 213, 79, 0.15);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
 }
 
 .btn-premium:hover::before {
@@ -201,7 +201,7 @@ html.lenis, html.lenis body {
 
 /* ── Selection ── */
 ::selection {
-  background: rgba(255, 213, 79, 0.25);
+  background: rgba(255, 255, 255, 0.25);
   color: #fff;
 }
 
@@ -565,7 +565,7 @@ html.lenis, html.lenis body {
   width: 0.25rem;
   height: 0.625rem;
   border-radius: 9999px;
-  background-color: var(--color-gold);
+  background-color: #38bdf8;
 }
 
 .scroll-indicator-text {
@@ -628,24 +628,26 @@ html.lenis, html.lenis body {
 }
 
 .event-sec-number {
-  font-size: 0.75rem;
-  font-family: monospace;
-  letter-spacing: 0.1em;
-  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #38bdf8;
 }
 
 .event-sec-line {
   height: 1px;
   width: 2rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .event-sec-title {
   font-size: 2.25rem;
-  font-family: var(--font-display);
+  font-family: 'Sora', sans-serif !important;
   font-weight: 800;
   letter-spacing: -0.025em;
   line-height: 1.05;
+  color: #ffffff !important;
   margin: 0;
 }
 
@@ -668,10 +670,11 @@ html.lenis, html.lenis body {
 }
 
 .event-sec-description {
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.75);
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 0.875rem;
   line-height: 1.625;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -696,17 +699,19 @@ html.lenis, html.lenis body {
 }
 
 .event-detail-label {
-  font-size: 10px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.45);
+  font-family: 'JetBrains Mono', monospace;
   display: block;
   margin-bottom: 0.25rem;
 }
 
 .event-detail-value {
   font-size: 0.875rem;
-  color: var(--color-text-primary);
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 500;
 }
 
@@ -719,11 +724,12 @@ html.lenis, html.lenis body {
 
 .event-tag {
   font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   padding: 0.375rem 0.75rem;
   border-radius: 9999px;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .event-sec-cta {

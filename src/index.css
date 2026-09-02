@@ -381,10 +381,20 @@ html, body {
   animation: earth-spin 24s linear infinite;
 }
 
-/* Global headings styling: Sora font and rgba(255, 255, 255, 0.9) color */
+/* Global typography & color standards */
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #0d1117;
+  color: #ffffff;
+}
+
+p, span, li, a, button, input, textarea {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Sora', sans-serif !important;
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 /* Retain transparency for gradient text headings */
@@ -397,5 +407,9 @@ h6.text-transparent,
 [class*="text-transparent"] {
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
+}
+
+code, kbd, samp, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
 }
 

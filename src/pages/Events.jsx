@@ -7,6 +7,7 @@ import EventsHero from '../components/EventsHero.jsx'
 import EventSection from '../components/EventSection.jsx'
 import MouseGlow from '../components/MouseGlow.jsx'
 import EventImage from '../components/EventImage.jsx'
+import CtaFooterSection from '../components/CtaFooterSection.jsx'
 import events from '../data/events.js'
 import '../styles/Events.css'
 
@@ -88,7 +89,7 @@ export default function Events() {
   }, [])
 
   return (
-    <div className="events-page-root">
+    <div className="events-page-root w-full bg-[#0d1117] text-white min-h-screen">
       {/* Noise grain overlay */}
       <div className="noise-overlay animate-grain" />
 
@@ -106,7 +107,7 @@ export default function Events() {
               height: `${2 + Math.random() * 3}px`,
               left: `${10 + i * 15}%`,
               top: `${15 + (i * 37) % 70}%`,
-              background: 'rgba(255,213,79,0.15)',
+              background: 'rgba(255, 255, 255, 0.2)',
               filter: 'blur(1px)',
               animationDelay: `${i * 1.5}s`,
               animationDuration: `${6 + i * 2}s`,
@@ -120,14 +121,14 @@ export default function Events() {
         <div
           className="events-glow-blob-1 animate-blob-1"
           style={{
-            background: 'radial-gradient(circle, rgba(255,213,79,0.03) 0%, transparent 60%)',
+            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%)',
             filter: 'blur(100px)',
           }}
         />
         <div
           className="events-glow-blob-2 animate-blob-2"
           style={{
-            background: 'radial-gradient(circle, rgba(187,134,252,0.02) 0%, transparent 60%)',
+            background: 'radial-gradient(circle, rgba(56, 189, 248, 0.03) 0%, transparent 70%)',
             filter: 'blur(100px)',
           }}
         />
@@ -175,12 +176,8 @@ export default function Events() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="events-footer">
-        <p className="events-footer-text">
-          © 2026 Event Showcase — All Rights Reserved
-        </p>
-      </footer>
+      {/* Footer Section — Shared across Home, Team, and Events */}
+      <CtaFooterSection />
     </div>
   )
 }

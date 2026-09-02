@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import HUD from './components/HUD';
 import HomePage from './pages/HomePage';
-import AlumniPage from './pages/AlumniPage';
+import TeamPage from './pages/TeamPage';
 import Events from './pages/Events';
 import ScrollToTop from './components/ScrollToTop';
 import './styles/globals.css';
@@ -22,7 +22,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/alumni" element={<AlumniPage />} />
+        <Route path="/team" element={<TeamPage />} />
         <Route path="/events" element={<Events />} />
       </Routes>
 

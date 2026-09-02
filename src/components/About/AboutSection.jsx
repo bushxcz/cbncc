@@ -21,8 +21,11 @@ export const AboutSection = ({ data }) => {
           <motion.div variants={staggerItem} className="mt-4">
             <CinematicHeading 
               text={data.title} 
-              className="!text-[clamp(2.2rem,10vw,3.5rem)] md:!text-[80px] lg:!text-[100px] pl-[80px]"
+              className="hidden md:block md:!text-[80px] lg:!text-[100px] md:pl-[80px]"
             />
+            <h2 className="md:hidden font-display-xl text-[clamp(2.15rem,10.5vw,2.75rem)] font-extrabold uppercase tracking-[0] leading-[0.95] mb-8 whitespace-nowrap">
+              WHO WE ARE?
+            </h2>
           </motion.div>
           {/* Metadata Block */}
           <motion.div 

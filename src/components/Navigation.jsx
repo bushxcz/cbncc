@@ -20,30 +20,16 @@ export default function Navigation() {
             <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/">
               HOME
             </Link>
-            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#team">
+            <NavLink className={({ isActive }) => `transition-colors duration-300 hover-underline-slide ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`} to="/team">
               OUR TEAM
-            </Link>
-            <NavLink className={({ isActive }) => `transition-colors duration-300 hover-underline-slide ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`} to="/alumni">
-              ALUMNI
             </NavLink>
-            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/events">
+            <NavLink className={({ isActive }) => `transition-colors duration-300 hover-underline-slide ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`} to="/events">
               EVENTS
-            </Link>
-            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/#faq">
-              FAQ
-            </Link>
+            </NavLink>
           </nav>
 
           {/* Actions (Join Us + Hamburger Menu) */}
           <div className="flex items-center gap-4">
-            {/* Join Us Button - hidden on mobile (below md breakpoint) */}
-            <button className="hidden md:flex px-6 py-2.5 border border-white rounded-full font-body-md text-[13px] font-semibold text-white hover:bg-white hover:text-[#0d1117] transition-all duration-300 items-center gap-2 group cursor-pointer shadow-sm">
-            CONTACT US
-              <span className="material-symbols-outlined text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" data-icon="north_east">
-                north_east
-              </span>
-            </button>
-
             {/* Hamburger Toggle Button - visible below md breakpoint */}
             <button
               onClick={() => setIsMenuOpen(true)}
@@ -99,34 +85,20 @@ export default function Navigation() {
           >
             HOME
           </Link>
-          <Link
-            className="text-white/60 hover:text-white transition-colors duration-300"
-            to="/#team"
+          <NavLink
+            className={({ isActive }) => `transition-colors duration-300 ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`}
+            to="/team"
             onClick={() => setIsMenuOpen(false)}
           >
             OUR TEAM
-          </Link>
+          </NavLink>
           <NavLink
             className={({ isActive }) => `transition-colors duration-300 ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`}
-            to="/alumni"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            ALUMNI
-          </NavLink>
-          <Link
-            className="text-white/60 hover:text-white transition-colors duration-300"
             to="/events"
             onClick={() => setIsMenuOpen(false)}
           >
             EVENTS
-          </Link>
-          <Link
-            className="text-white/60 hover:text-white transition-colors duration-300"
-            to="/#faq"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            FAQ
-          </Link>
+          </NavLink>
         </nav>
 
         {/* Drawer Actions — JOIN US CTA only */}

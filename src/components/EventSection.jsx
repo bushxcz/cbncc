@@ -82,12 +82,12 @@ export default function EventSection({ event, index }) {
         {/* Event name */}
         <h2
           data-animate
-          className="event-sec-title"
+          className="event-sec-title font-display-xl uppercase"
         >
           {event.name}
         </h2>
 
-        {/* Gold accent line */}
+        {/* Accent line */}
         <div
           data-animate
           className="event-sec-accent-bar"
@@ -97,7 +97,7 @@ export default function EventSection({ event, index }) {
         {/* Description */}
         <p
           data-animate
-          className="event-sec-description"
+          className="event-sec-description font-body"
         >
           {event.description}
         </p>

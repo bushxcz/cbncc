@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   const isDark = true;
 
@@ -35,21 +37,21 @@ export default function Hero() {
 
           {/* Subtitle */}
           <p
-            className="text-[clamp(0.95rem,4.4vw,1.3rem)] leading-relaxed text-white mb-8 font-body-md animate-fade-up delay-200 max-w-[14rem] sm:max-w-none ml-[4px]"
+            className="text-[clamp(1rem,4.4vw,1.3rem)] leading-relaxed text-white mb-8 font-body-md animate-fade-up delay-200 max-w-sm"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
-            A community of<br />
-            innovators, builders<br />
+            A community of innovators, builders<br />
             and changemakers.
           </p>
 
-          <div className="animate-fade-up delay-300">
-            <button
-              className="flex items-center justify-between gap-5 px-6 sm:px-8 py-[15px] sm:py-[16px] bg-zinc-300 hover:bg-white text-black rounded-2xl font-body-md font-bold text-xs tracking-wider uppercase transition-all duration-300 active:scale-95 shadow-md cursor-pointer border border-white/10"
+          <div className="animate-fade-up delay-300 flex justify-start">
+            <Link
+              to="/events"
+              className="flex items-center justify-between gap-5 px-6 sm:px-8 py-[15px] sm:py-[16px] bg-white text-black rounded-2xl font-body-md font-bold text-xs tracking-wider uppercase transition-all duration-300 active:scale-95 shadow-md cursor-pointer border border-white/10"
             >
               <span>Explore</span>
               <span className="text-sm font-black">→</span>
-            </button>
+            </Link>
           </div>
 
         </div>
@@ -100,23 +102,22 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="absolute bottom-48 sm:bottom-15 left-4 md:left-20 z-30 max-w-md hidden sm:block">
+        <div className="absolute bottom-14 sm:bottom-16 md:bottom-20 left-6 md:left-16 lg:left-24 z-30 max-w-xl hidden sm:block">
           <p
-            className="text-[clamp(0.95rem,4vw,1.3rem)] leading-relaxed text-white mb-8 font-body-md animate-fade-up delay-200 ml-[4px]"
+            className="text-[clamp(1.05rem,1.8vw,1.4rem)] leading-relaxed text-white mb-5 font-body-md animate-fade-up delay-200 text-left"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
-            A community of
-            innovators, builders
+            A community of innovators, builders<br />
             and changemakers.
           </p>
-          <div className="z-30 flex flex-row gap-4 mt-6 justify-center pr-15">
-            <button
+          <div className="z-30 flex flex-row items-center justify-start">
+            <Link
+              to="/events"
               className="
                 flex items-center justify-between gap-4
-                min-w-[220px]
-                px-7 py-4
-                bg-black text-white
-                dark:bg-white dark:text-black
+                min-w-[190px]
+                px-7 py-3.5 sm:py-4
+                bg-white text-black
                 rounded-2xl
                 font-semibold
                 text-[15px]
@@ -124,12 +125,13 @@ export default function Hero() {
                 transition-all duration-300
                 hover:scale-[1.03]
                 hover:shadow-xl
+                hover:bg-white/90
                 cursor-pointer
               "
             >
               <span>Explore</span>
               <span className="material-symbols-outlined text-lg">east</span>
-            </button>
+            </Link>
           </div>
         </div>
 
