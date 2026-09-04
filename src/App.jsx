@@ -5,10 +5,13 @@ import HomePage from './pages/HomePage';
 import TeamPage from './pages/TeamPage';
 import Events from './pages/Events';
 import ScrollToTop from './components/ScrollToTop';
+import useSmoothScroll from './hooks/useSmoothScroll';
 import './styles/globals.css';
 import './styles/WhyJoin.css';
 
 export default function App() {
+  useSmoothScroll();
+
   return (
     <div className="dark relative min-h-screen bg-[#0d1117] text-white font-body-md">
 
