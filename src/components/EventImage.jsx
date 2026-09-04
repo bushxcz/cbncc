@@ -51,7 +51,7 @@ export default function EventImage({ src, alt, accentColor }) {
         className="event-img-border-frame"
         style={{
           border: '1px solid rgba(255,255,255,0.06)',
-          boxShadow: `0 25px 60px -12px rgba(0,0,0,0.6), 0 0 40px ${accentColor}08`,
+          boxShadow: '0 25px 60px -12px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.03)',
         }}
       >
         {/* Placeholder */}
@@ -96,15 +96,15 @@ export default function EventImage({ src, alt, accentColor }) {
         <div
           className={`event-img-glow-overlay ${isHovering ? 'active' : ''}`}
           style={{
-            boxShadow: `inset 0 0 60px ${accentColor}10, 0 0 50px ${accentColor}08`,
+            boxShadow: 'inset 0 0 60px rgba(255,255,255,0.06), 0 0 50px rgba(255,255,255,0.04)',
           }}
         />
       </div>
 
-      {/* Floating accent dot */}
+      {/* Floating accent dot without pulsing/flickering */}
       <div
-        className="event-img-accent-dot animate-pulse-glow"
-        style={{ background: accentColor, filter: 'blur(4px)' }}
+        className="event-img-accent-dot"
+        style={{ background: 'rgba(255, 255, 255, 0.4)', filter: 'blur(3px)' }}
       />
     </div>
   )

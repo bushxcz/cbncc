@@ -5,8 +5,20 @@ export default function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  useEffect(() => {
     if (!hash) {
+      document.documentElement.style.scrollBehavior = 'auto';
       window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      requestAnimationFrame(() => {
+        document.documentElement.style.scrollBehavior = '';
+      });
     } else {
       const id = hash.replace("#", "");
       const element = document.getElementById(id);

@@ -122,6 +122,16 @@
 }
 
 /* Custom Base / Utility Styles */
+.split-parent,
+.split-line,
+.split-word,
+.split-char {
+  font-family: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
   display: inline-block;
@@ -413,3 +423,40 @@ code, kbd, samp, pre, .font-mono {
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* Desktop home opening: the robot wipes in once, while CBNCC moves continuously behind it. */
+@keyframes hero-image-reveal {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 50% 0 50%);
+    transform: translateY(42px) scale(0.94);
+  }
+  65% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(6px) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-wordmark-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-25%, 0, 0);
+  }
+}
+
+.hero-image-reveal {
+  animation: hero-image-reveal 1.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: clip-path, opacity, transform;
+}
+
+.hero-wordmark-track {
+  animation: hero-wordmark-marquee 18s linear infinite;
+  will-change: transform;
+}

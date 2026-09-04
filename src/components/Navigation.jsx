@@ -4,26 +4,36 @@ import { Link, NavLink } from 'react-router-dom';
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleNavClick = () => {
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    requestAnimationFrame(() => {
+      document.documentElement.style.scrollBehavior = '';
+    });
+  };
+
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 bg-[#0d1117]/80 backdrop-blur-md border-b border-white/10 transition-colors duration-300 text-white">
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto animate-fade-in">
           {/* Logo */}
-          <div className="flex items-center gap-3 select-none cursor-pointer">
+          <Link to="/" onClick={handleNavClick} className="flex items-center gap-3 select-none cursor-pointer">
             <span className="font-display-xl text-body-lg font-extrabold tracking-tighter text-white">
               CBNCC
             </span> 
-          </div>
+          </Link>
 
           {/* Desktop Menu - visible on md and up */}
           <nav className="hidden md:flex gap-8 font-body-md text-[14px] font-medium items-center">
-            <Link className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/">
+            <Link onClick={handleNavClick} className="text-white/60 hover:text-white transition-colors duration-300 hover-underline-slide" to="/">
               HOME
             </Link>
-            <NavLink className={({ isActive }) => `transition-colors duration-300 hover-underline-slide ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`} to="/team">
+            <NavLink onClick={handleNavClick} className={({ isActive }) => `transition-colors duration-300 hover-underline-slide ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`} to="/team">
               OUR TEAM
             </NavLink>
-            <NavLink className={({ isActive }) => `transition-colors duration-300 hover-underline-slide ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`} to="/events">
+            <NavLink onClick={handleNavClick} className={({ isActive }) => `transition-colors duration-300 hover-underline-slide ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`} to="/events">
               EVENTS
             </NavLink>
           </nav>
@@ -81,21 +91,30 @@ export default function Navigation() {
           <Link
             className="text-white/60 hover:text-white transition-colors duration-300"
             to="/"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={() => {
+              setIsMenuOpen(false);
+              handleNavClick();
+            }}
           >
             HOME
           </Link>
           <NavLink
             className={({ isActive }) => `transition-colors duration-300 ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`}
             to="/team"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={() => {
+              setIsMenuOpen(false);
+              handleNavClick();
+            }}
           >
             OUR TEAM
           </NavLink>
           <NavLink
             className={({ isActive }) => `transition-colors duration-300 ${isActive ? 'text-white font-semibold' : 'text-white/60 hover:text-white'}`}
             to="/events"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={() => {
+              setIsMenuOpen(false);
+              handleNavClick();
+            }}
           >
             EVENTS
           </NavLink>

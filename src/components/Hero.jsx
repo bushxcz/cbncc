@@ -10,11 +10,11 @@ export default function Hero() {
       <div className="flex lg:hidden flex-col w-full min-h-[100svh] bg-[#0d1117] select-none relative z-20 overflow-hidden">
 
         {/* Robot Image bleeding on the right/bottom */}
-        <div className="absolute right-[-18%] bottom-[-6%] w-[92%] sm:right-[-15%] sm:w-[70%] max-w-[420px] h-[64svh] sm:h-[70svh] pointer-events-none z-0 flex items-end justify-end opacity-80 sm:opacity-100">
+        <div className="absolute right-[-18%] bottom-[-6%] w-[calc(92%+2px)] sm:right-[-15%] sm:w-[calc(70%+2px)] max-w-[422px] h-[calc(64svh+2px)] sm:h-[calc(70svh+2px)] pointer-events-none z-0 flex items-end justify-end opacity-80 sm:opacity-100">
           <img
             alt="CBNCC Chrome Robot Profile"
             src="/blackrobo.png"
-            className="w-full h-full object-contain object-right-bottom"
+            className="w-full h-full object-contain object-right-bottom scale-[1.01] origin-bottom-right"
           />
         </div>
 
@@ -40,7 +40,8 @@ export default function Hero() {
             className="text-[clamp(1rem,4.4vw,1.3rem)] leading-relaxed text-white mb-8 font-body-md animate-fade-up delay-200 max-w-sm"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
-            A community of innovators, builders<br />
+            A community of<br />
+            innovators, builders<br />
             and changemakers.
           </p>
 
@@ -60,21 +61,28 @@ export default function Hero() {
 
       {/* Desktop Layout (>= lg breakpoint) */}
       <div className="hidden lg:flex relative min-h-screen w-full items-center justify-center select-none overflow-hidden bg-[#0d1117]">
-        <div className="relative flex items-center justify-center w-full h-full max-w-5xl px-4">
-
+        {/* The wordmark continuously travels behind the hero image, like the supplied opening reference. */}
+        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 overflow-hidden pointer-events-none">
           <h1
+            aria-label="CBNCC"
             style={{
               color: "rgba(255, 255, 255, 0.9)",
               fontFamily: "'Sora', sans-serif"
             }}
-            className="relative z-10 text-[27vw] md:text-[25vw] lg:text-[21vw] font-medium font-black tracking-tighter uppercase text-center leading-none select-none -translate-y-10"
+            className="hero-wordmark-track flex w-max whitespace-nowrap text-[21vw] font-medium font-black tracking-tighter uppercase leading-none select-none"
           >
-            CBNCC
+            {Array.from({ length: 4 }).map((_, index) => (
+              <span key={index} aria-hidden="true" className="pr-[12vw]">CBNCC</span>
+            ))}
           </h1>
+        </div>
+
+        <div className="relative flex items-center justify-center w-full h-full max-w-5xl px-4">
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
             <img
               alt="CBNCC Chrome Robot Profile"
               className="
+                hero-image-reveal
                 h-[60vh]
                 sm:h-[60vh]
                 md:h-[75vh]

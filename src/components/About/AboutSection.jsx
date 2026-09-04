@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { staggerContainer, staggerItem } from "../../animations/variants";
-import { SectionLabel, CinematicHeading } from "../UI";
+import SplitText from "../SplitText";
+import BendingMarquee from "../BendingMarquee";
 
 export const AboutSection = ({ data }) => {
   return (
@@ -14,17 +15,29 @@ export const AboutSection = ({ data }) => {
     >
       {/* Background grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
-      
 
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-element-gap items-center relative z-10">
         <div className="md:col-span-7 lg:col-span-8 relative">
           <motion.div variants={staggerItem} className="mt-4">
-            <CinematicHeading 
-              text={data.title} 
-              className="hidden md:block md:!text-[80px] lg:!text-[100px] md:pl-[80px]"
-            />
-            <h2 className="md:hidden font-display-xl text-[clamp(2.15rem,10.5vw,2.75rem)] font-extrabold uppercase tracking-[0] leading-[0.95] mb-8 whitespace-nowrap">
-              WHO WE ARE?
+            <h2
+              className="about-title font-display-xl font-extrabold uppercase text-white tracking-[-0.02em] leading-[0.95] mb-8 md:mb-12 text-[clamp(2.6rem,10vw,3.75rem)] md:text-[clamp(3.5rem,5.8vw,5.25rem)] lg:text-[clamp(4.2rem,6.8vw,6.5rem)]"
+              style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800 }}
+            >
+              <SplitText
+                text="WHO WE ARE?"
+                tag="span"
+                textAlign="left"
+                style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800 }}
+                className="inline-block font-display-xl font-extrabold uppercase text-white tracking-[-0.02em]"
+                delay={40}
+                duration={1.2}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.15}
+                rootMargin="-50px"
+              />
             </h2>
           </motion.div>
           {/* Metadata Block */}
@@ -39,7 +52,7 @@ export const AboutSection = ({ data }) => {
         <div className="md:col-span-5 lg:col-span-4 space-y-8 md:space-y-12">
           <motion.div variants={staggerItem} className="space-y-6">
             <div className="w-12 h-[1px] bg-primary/20" />
-            <p className="font-body-lg text-[16px] sm:text-[18px] md:text-[20px] text-on-surface-variant leading-relaxed font-light">
+            <p className="font-body-lg text-[17px] sm:text-[19px] md:text-[21px] text-on-surface-variant leading-relaxed font-light">
               {data.description}
             </p>
           </motion.div>
@@ -57,6 +70,7 @@ export const AboutSection = ({ data }) => {
           </motion.div>
         </div>
       </div>
+      <BendingMarquee className="about-section-marquee" />
     </motion.section>
   );
 };

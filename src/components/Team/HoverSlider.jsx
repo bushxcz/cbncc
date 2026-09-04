@@ -1,87 +1,56 @@
-"use client";
-
-import * as React from "react";
-import { MotionConfig, motion } from "motion/react";
-import { cn } from "@/lib/utils";
+import * as React from "react"
+import { MotionConfig, motion } from "motion/react"
+import { cn } from "@/lib/utils"
 
 function splitText(text) {
-  const words = text.split(" ").map((word) => word.concat(" "));
-  const characters = words.map((word) => word.split("")).flat(1);
-
-  return {
-    words,
-    characters,
-  };
+  const words = text.split(" ").map((word) => word.concat(" "))
+  const characters = words.map((word) => word.split("")).flat(1)
+  return { words, characters }
 }
 
-const HoverSliderContext = React.createContext(undefined);
+const HoverSliderContext = React.createContext(undefined)
 
-export function useHoverSliderContext() {
-  const context = React.useContext(HoverSliderContext);
+function useHoverSliderContext() {
+  const context = React.useContext(HoverSliderContext)
   if (context === undefined) {
-    throw new Error(
-      "useHoverSliderContext must be used within a HoverSliderProvider"
-    );
+    throw new Error("useHoverSliderContext must be used within a HoverSliderProvider")
   }
-  return context;
+  return context
 }
 
 export const HoverSlider = React.forwardRef(
-  ({ children, className, activeSlide: controlledActiveSlide, onSlideChange, ...props }, ref) => {
-    const [internalActiveSlide, setInternalActiveSlide] = React.useState(0);
-    const activeSlide = controlledActiveSlide !== undefined ? controlledActiveSlide : internalActiveSlide;
+  ({ children, className, activeSlide: controlledActive, onSlideChange, ...props }, ref) => {
+    const [internalActive, setInternalActive] = React.useState(0)
+    const activeSlide = controlledActive !== undefined ? controlledActive : internalActive
     const changeSlide = React.useCallback(
       (index) => {
-        if (onSlideChange) onSlideChange(index);
-        setInternalActiveSlide(index);
+        if (onSlideChange) onSlideChange(index)
+        else setInternalActive(index)
       },
       [onSlideChange]
-    );
+    )
     return (
       <HoverSliderContext.Provider value={{ activeSlide, changeSlide }}>
-        <div ref={ref} className={className} {...props}>{children}</div>
+        <div className={className} ref={ref}>{children}</div>
       </HoverSliderContext.Provider>
-    );
+    )
   }
-);
-HoverSlider.displayName = "HoverSlider";
-
-export const WordStaggerHover = React.forwardRef(
-  ({ children, className, ...props }, ref) => {
-    return (
-      <span
-        ref={ref}
-        className={cn("relative inline-block origin-bottom overflow-hidden", className)}
-        {...props}
-      >
-        {children}
-      </span>
-    );
-  }
-);
-WordStaggerHover.displayName = "WordStaggerHover";
+)
+HoverSlider.displayName = "HoverSlider"
 
 export const TextStaggerHover = React.forwardRef(
   ({ text, index, children, className, ...props }, ref) => {
-    const { activeSlide, changeSlide } = useHoverSliderContext();
-    const { characters } = splitText(text);
-    const isActive = activeSlide === index;
-    const handleMouse = () => changeSlide(index);
+    const { activeSlide, changeSlide } = useHoverSliderContext()
+    const { characters } = splitText(text)
+    const isActive = activeSlide === index
     return (
       <span
-        className={cn(
-          "relative inline-block origin-bottom overflow-hidden",
-          className
-        )}
+        className={cn("relative inline-block origin-bottom overflow-hidden", className)}
         {...props}
         ref={ref}
-        onMouseEnter={handleMouse}
       >
         {characters.map((char, i) => (
-          <span
-            key={`${char}-${i}`}
-            className="relative inline-block overflow-hidden"
-          >
+          <span key={`${char}-${i}`} className="relative inline-block overflow-hidden">
             <MotionConfig
               transition={{
                 delay: i * 0.025,
@@ -109,10 +78,10 @@ export const TextStaggerHover = React.forwardRef(
           </span>
         ))}
       </span>
-    );
+    )
   }
-);
-TextStaggerHover.displayName = "TextStaggerHover";
+)
+TextStaggerHover.displayName = "TextStaggerHover"
 
 export const clipPathVariants = {
   visible: {
@@ -121,7 +90,7 @@ export const clipPathVariants = {
   hidden: {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0px)",
   },
-};
+}
 
 export const HoverSliderImageWrap = React.forwardRef(
   ({ className, ...props }, ref) => {
@@ -134,14 +103,14 @@ export const HoverSliderImageWrap = React.forwardRef(
         )}
         {...props}
       />
-    );
+    )
   }
-);
-HoverSliderImageWrap.displayName = "HoverSliderImageWrap";
+)
+HoverSliderImageWrap.displayName = "HoverSliderImageWrap"
 
 export const HoverSliderImage = React.forwardRef(
-  ({ index, imageUrl, src, children, className, ...props }, ref) => {
-    const { activeSlide } = useHoverSliderContext();
+  ({ index, imageUrl, children, className, ...props }, ref) => {
+    const { activeSlide } = useHoverSliderContext()
     return (
       <motion.img
         className={cn("inline-block align-middle", className)}
@@ -149,10 +118,9 @@ export const HoverSliderImage = React.forwardRef(
         variants={clipPathVariants}
         animate={activeSlide === index ? "visible" : "hidden"}
         ref={ref}
-        src={imageUrl || src}
         {...props}
       />
-    );
+    )
   }
-);
-HoverSliderImage.displayName = "HoverSliderImage";
+)
+HoverSliderImage.displayName = "HoverSliderImage"

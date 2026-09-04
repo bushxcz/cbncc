@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function CtaFooterSection() {
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#0d1117] pt-0 pb-0 px-3 sm:px-6 lg:px-8 flex flex-col items-center transition-colors duration-300">
+    <section className="relative w-full min-h-screen overflow-hidden bg-[#0d1117] pt-0 pb-0 px-3 sm:px-6 lg:px-8 flex flex-col items-center transition-colors duration-300">
       {/* Premium Futuristic Background Elements */}
       <div className="absolute inset-0 z-0">
         {/* Subtle Tech Dot Matrix */}
@@ -15,22 +15,22 @@ export default function CtaFooterSection() {
           }}
         />
 
-        {/* Ambient Glowing Orbs */}
+        {/* Ambient Glowing Orbs (static, GPU friendly) */}
         <div
-          className="absolute -top-40 left-1/4 h-[500px] w-[500px] rounded-full opacity-40 dark:opacity-20 blur-[100px] animate-float z-0 pointer-events-none"
+          className="absolute -top-40 left-1/4 h-[400px] w-[400px] rounded-full opacity-25 dark:opacity-15 blur-[50px] z-0 pointer-events-none"
           style={{ backgroundColor: "var(--orb-top)", transition: "background-color 0.5s ease" }}
         />
         <div
-          className="absolute -bottom-40 right-1/4 h-[600px] w-[600px] rounded-full opacity-30 dark:opacity-15 blur-[120px] animate-float-delayed z-0 pointer-events-none"
+          className="absolute -bottom-40 right-1/4 h-[450px] w-[450px] rounded-full opacity-20 dark:opacity-10 blur-[50px] z-0 pointer-events-none"
           style={{ backgroundColor: "var(--orb-bottom)", transition: "background-color 0.5s ease" }}
         />
       </div>
 
       {/* Main Container */}
-      <div className="relative z-10 w-full max-w-[1530px] flex flex-col items-center">
+      <div className="relative z-10 w-full max-w-[1530px] flex flex-col items-center flex-1">
 
         {/* --- CTA Content Area (merged with page body) --- */}
-        <div className="w-full px-2 py-4 sm:px-6 sm:py-8 lg:px-12 text-center relative overflow-hidden">
+        <div className="w-full px-2 py-4 sm:px-6 sm:py-6 lg:px-12 text-center relative overflow-hidden flex-1 flex flex-col justify-center">
 
           {/* Dot matrix grid top-left under the bracket */}
           <div className="absolute top-8 left-8 grid grid-cols-2 gap-1.5 opacity-15 select-none pointer-events-none hidden sm:grid">
@@ -39,16 +39,8 @@ export default function CtaFooterSection() {
             ))}
           </div>
 
-          {/* Bottom copyright info inside the card */}
-          <div className="absolute bottom-4 left-16 hidden md:flex items-center gap-2.5 text-[9px] font-bold tracking-wider text-foreground/30 uppercase select-none">
-            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-              <path d="M12 2l2.4 7.4h7.8l-6.3 4.6 2.4 7.4-6.3-4.6-6.3 4.6 2.4-7.4-6.3-4.6h7.8z" />
-            </svg>
-            <span></span>
-          </div>
-
           {/* Interactive grid container */}
-          <div className="relative z-10 flex flex-col items-center justify-center mt-0 py-2 sm:py-6">
+          <div className="relative z-10 flex flex-col items-center justify-center py-2 sm:py-4">
 
             {/* CTA Text Content */}
             <div className="flex flex-col items-center text-center max-w-3xl w-full px-2 sm:px-4">
@@ -108,7 +100,7 @@ export default function CtaFooterSection() {
         </div>
 
         {/* --- Premium Futuristic Footer --- */}
-        <footer className="w-full mt-0 relative rounded-t-[2rem] overflow-hidden">
+        <footer className="w-full mt-auto relative rounded-t-[2rem] overflow-hidden">
 
           {/* Futuristic Background Image */}
           <div className="absolute inset-0 z-0">
@@ -122,13 +114,13 @@ export default function CtaFooterSection() {
           </div>
 
           {/* Footer Content */}
-          <div className="relative z-10 px-6 sm:px-10 lg:px-16 pt-14 pb-8">
+          <div className="relative z-10 px-6 sm:px-10 lg:px-16 pt-10 pb-6">
 
             {/* Main Footer Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 pb-14">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 pb-6">
 
               {/* Left side info block */}
-              <div className="md:col-span-4 flex flex-col items-start space-y-5">
+              <div className="md:col-span-4 flex flex-col items-start space-y-4">
                 {/* Brand logo */}
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-foreground text-background font-heading font-black text-lg tracking-wider shadow-lg">
@@ -170,7 +162,7 @@ export default function CtaFooterSection() {
                         <path
                           fillRule="evenodd"
                           clipRule="evenodd"
-                          d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                          d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
                         />
                       ),
                       href: "https://www.instagram.com/cbncc/"
@@ -227,6 +219,15 @@ export default function CtaFooterSection() {
                       <li key={link.label}>
                         <Link
                           to={link.to}
+                          onClick={() => {
+                            document.documentElement.style.scrollBehavior = 'auto';
+                            window.scrollTo(0, 0);
+                            document.documentElement.scrollTop = 0;
+                            document.body.scrollTop = 0;
+                            requestAnimationFrame(() => {
+                              document.documentElement.style.scrollBehavior = '';
+                            });
+                          }}
                           className="text-sm text-muted hover:text-foreground transition-colors relative py-0.5 group inline-flex items-center gap-2"
                         >
                           <span className="text-muted/60 text-xs group-hover:text-foreground transition-colors">&gt;</span>
@@ -273,47 +274,6 @@ export default function CtaFooterSection() {
               </div>
             </div>
 
-            {/* Bottom credit bar */}
-            <div className="border-t border-divider py-6 flex flex-col sm:flex-row items-center justify-between gap-5">
-              {/* Left: Asterisk icon + Copyright */}
-              <div className="flex items-center gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-card-border bg-card-bg backdrop-blur-sm shadow-sm">
-                  <span className="text-lg font-bold text-foreground font-mono">✳</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-xs text-muted font-body font-medium">
-                    © {new Date().getFullYear()} Code Busters & Coding Club,
-                  </span>
-                  <span className="text-xs text-muted font-body font-medium">
-                    Netaji Subhas University.
-                  </span>
-                  <span className="text-[10px] text-muted/80 font-body">
-                    All rights reserved.
-                  </span>
-                </div>
-              </div>
-
-              {/* Center: BUILD • BREAK • LEARN • REPEAT */}
-              <div className="hidden md:flex items-center gap-3 text-[10px] font-bold tracking-[0.3em] text-muted uppercase font-heading select-none">
-                <span>Build</span>
-                <span className="w-1 h-1 rounded-full bg-foreground/30"></span>
-                <span>Break</span>
-                <span className="w-1 h-1 rounded-full bg-foreground/30"></span>
-                <span>Learn</span>
-                <span className="w-1 h-1 rounded-full bg-foreground/30"></span>
-                <span>Repeat</span>
-              </div>
-
-              {/* Right: Crafted for text */}
-              <div className="flex flex-col items-end text-right">
-                <span className="text-[10px] uppercase tracking-[0.2em] text-muted font-bold font-heading">
-                  Crafted for
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-muted font-bold font-heading">
-                  Innovators & Builders
-                </span>
-              </div>
-            </div>
           </div>
         </footer>
 

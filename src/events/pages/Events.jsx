@@ -5,7 +5,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import useSmoothScroll from '../hooks/useSmoothScroll.js'
 import Hero from '../components/Hero.jsx'
 import EventSection from '../components/EventSection.jsx'
-import MouseGlow from '../components/MouseGlow.jsx'
 import EventImage from '../components/EventImage.jsx'
 import events from '../data/events.js'
 
@@ -59,7 +58,7 @@ export default function Events() {
               trigger: `.desktop-section-${i}`,
               start: 'top bottom', // Start revealing as the text card starts entering from the bottom
               end: 'top 10%',      // Fully reveal when the text card is almost centered
-              scrub: true,
+              scrub: 0.4,
             },
           }
         )
@@ -74,9 +73,6 @@ export default function Events() {
 
   return (
     <div className="relative min-h-screen bg-bg">
-      {/* Noise grain overlay */}
-      <div className="noise-overlay animate-grain" />
-
       {/* Floating background particles */}
       <div
         ref={bgParticlesRef}
@@ -117,9 +113,6 @@ export default function Events() {
           }}
         />
       </div>
-
-      {/* Cursor glow */}
-      <MouseGlow />
 
       {/* Hero */}
       <Hero />

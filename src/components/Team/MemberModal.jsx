@@ -58,7 +58,7 @@ const MemberModal = ({ member, onClose }) => {
                 {member.name}
               </h3>
               
-              <p className="text-sm font-mono text-cyan-400 uppercase tracking-wider mb-6">
+              <p className="text-sm font-mono text-white/80 uppercase tracking-wider mb-6">
                 {member.role}
               </p>
               
@@ -68,7 +68,7 @@ const MemberModal = ({ member, onClose }) => {
                 {member.bio}
               </p>
               
-              <div className="border-l-2 border-cyan-400 pl-4 py-1">
+              <div className="border-l-2 border-white/50 pl-4 py-1">
                 <p className="italic text-white/90 text-sm font-medium leading-snug">
                   "{member.quote}"
                 </p>

@@ -8,6 +8,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import ShinyText from "./ShinyText";
+import SplitText from "./SplitText";
 
 const benefits = [
   {
@@ -133,8 +134,41 @@ export function WhyJoinCBNCC() {
 
         <div className="why-join__hero-content">
 
-          <h1 id="why-join-title" className="why-join__hero-title">
-            WHY JOIN <br /> CBNCC?
+          <h1
+            id="why-join-title"
+            className="why-join__hero-title font-display-xl text-[clamp(2.75rem,7.5vw,5.5rem)] md:text-[clamp(3.2rem,6.8vw,5.8rem)] font-extrabold uppercase text-white tracking-[-0.02em] leading-[0.95] pb-6 sm:pb-8 md:pb-10"
+            style={{ fontFamily: "'Sora', sans-serif" }}
+          >
+            <div className="flex flex-wrap items-center justify-center gap-x-[0.35em] leading-[0.95]">
+              <SplitText
+                text="WHY JOIN"
+                tag="span"
+                textAlign="center"
+                className="inline-block font-display-xl font-extrabold uppercase text-white tracking-[-0.02em]"
+                delay={40}
+                duration={1.2}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.15}
+                rootMargin="-60px"
+              />
+              <SplitText
+                text="CBNCC?"
+                tag="span"
+                textAlign="center"
+                className="inline-block font-display-xl font-extrabold uppercase text-white tracking-[-0.02em]"
+                delay={45}
+                duration={1.2}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.15}
+                rootMargin="-60px"
+              />
+            </div>
           </h1>
           <p className="why-join__hero-description why-join__hero-description--desktop">
             At CBNCC, learning goes beyond classrooms. Build real projects,

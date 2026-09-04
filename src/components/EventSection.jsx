@@ -91,7 +91,7 @@ export default function EventSection({ event, index }) {
         <div
           data-animate
           className="event-sec-accent-bar"
-          style={{ background: event.color }}
+          style={{ background: 'linear-gradient(to right, rgba(255, 255, 255, 0.7), transparent)' }}
         />
 
         {/* Description */}

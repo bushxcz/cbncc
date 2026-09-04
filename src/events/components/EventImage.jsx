@@ -40,7 +40,7 @@ export default function EventImage({ src, alt, accentColor }) {
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-[480px] mx-auto lg:mx-0 cursor-none group"
+      className="relative w-full max-w-[480px] mx-auto lg:mx-0 group"
       style={{ willChange: 'transform', transformStyle: 'preserve-3d' }}
       onMouseMove={onMouseMove}
       onMouseEnter={() => setIsHovering(true)}
