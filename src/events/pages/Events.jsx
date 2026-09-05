@@ -58,7 +58,7 @@ export default function Events() {
               trigger: `.desktop-section-${i}`,
               start: 'top bottom', // Start revealing as the text card starts entering from the bottom
               end: 'top 10%',      // Fully reveal when the text card is almost centered
-              scrub: 0.4,
+              scrub: true,
             },
           }
         )

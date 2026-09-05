@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import useSmoothScroll from '../hooks/useSmoothScroll.js'
 import EventsHero from '../components/EventsHero.jsx'
 import EventSection from '../components/EventSection.jsx'
 import EventImage from '../components/EventImage.jsx'
@@ -19,6 +20,7 @@ gsap.registerPlugin(ScrollTrigger)
  * and stacked event posters reveal themselves using a circular slide mask transition.
  */
 export default function Events() {
+  useSmoothScroll()
   const eventsLayoutRef = useRef(null)
   const eventsTextTrackRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -69,7 +71,7 @@ export default function Events() {
           start: 'top top',
           end: () => `+=${(events.length - 1) * window.innerHeight}`,
           pin: true,
-          scrub: 0.4,
+          scrub: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
           onUpdate: (self) => setImageProgress(self.progress),

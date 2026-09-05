@@ -15,13 +15,13 @@ export default function CtaFooterSection() {
           }}
         />
 
-        {/* Ambient Glowing Orbs (static, GPU friendly) */}
+        {/* Ambient Glowing Orbs (static, no flicker) */}
         <div
-          className="absolute -top-40 left-1/4 h-[400px] w-[400px] rounded-full opacity-25 dark:opacity-15 blur-[50px] z-0 pointer-events-none"
+          className="absolute -top-40 left-1/4 h-[500px] w-[500px] rounded-full opacity-30 dark:opacity-15 blur-[100px] z-0 pointer-events-none"
           style={{ backgroundColor: "var(--orb-top)", transition: "background-color 0.5s ease" }}
         />
         <div
-          className="absolute -bottom-40 right-1/4 h-[450px] w-[450px] rounded-full opacity-20 dark:opacity-10 blur-[50px] z-0 pointer-events-none"
+          className="absolute -bottom-40 right-1/4 h-[600px] w-[600px] rounded-full opacity-20 dark:opacity-10 blur-[120px] z-0 pointer-events-none"
           style={{ backgroundColor: "var(--orb-bottom)", transition: "background-color 0.5s ease" }}
         />
       </div>

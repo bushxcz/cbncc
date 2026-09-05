@@ -1,10 +1,11 @@
-/* Ambient Background Glow Orbs - GPU friendly */
+/* Ambient Background Glow Orbs */
 .why-join__glow-orb {
   position: absolute;
   border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.12;
   pointer-events: none;
   z-index: 0;
-  will-change: transform;
 }
 
 .why-join__glow-orb--1 {
@@ -12,7 +13,7 @@
   left: 10%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 35%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%); /* Silver-white */
   animation: floatOrb1 20s infinite alternate ease-in-out;
 }
 
@@ -21,7 +22,7 @@
   right: 5%;
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.015) 35%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%); /* Silver-white */
   animation: floatOrb2 25s infinite alternate ease-in-out;
 }
 
@@ -30,14 +31,8 @@
   left: 15%;
   width: 280px;
   height: 280px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.01) 35%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%); /* Silver-white */
   animation: floatOrb3 18s infinite alternate ease-in-out;
-}
-
-@media (max-width: 768px) {
-  .why-join__glow-orb {
-    animation: none;
-  }
 }
 
 @keyframes floatOrb1 {

@@ -17,7 +17,7 @@ export default function HomePage() {
         stackPosition="0px"
         scaleEndPosition="-10%"
         baseScale={0.94}
-        blurAmount={0}
+        blurAmount={0.4}
       >
         <ScrollStackItem>
           <Hero />

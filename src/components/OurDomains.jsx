@@ -138,7 +138,7 @@ export default function OurDomains() {
                 key={tech.id}
                 variants={cardVariants}
                 style={{ '--hover-color': tech.color }}
-                className="group relative aspect-square flex items-center justify-center rounded-2xl bg-[#161b22]/70 hover:bg-[#161b22]/90 backdrop-blur-md border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] hover:shadow-premium-hover transition-all duration-300 overflow-hidden cursor-pointer"
+                className="group relative aspect-square flex items-center justify-center rounded-2xl bg-white/[0.06] hover:bg-white/[0.10] backdrop-blur-xl border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)] hover:shadow-premium-hover transition-all duration-500 overflow-hidden cursor-pointer"
                 whileHover={{ 
                   y: -6, 
                   scale: 1.03,
